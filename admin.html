@@ -63,8 +63,10 @@
           <button type="button" class="pin-toggle-visibility" id="admin-pin-toggle-btn" aria-label="Mostrar o esconder PIN" title="Mostrar/Ocultar PIN">
             <i class="fa-solid fa-eye" id="admin-pin-eye-icon"></i>
           </button>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 6px;">
+          <small class="pin-hint" style="margin: 0;">PIN por defecto: <strong>1234</strong></small>
+          <button type="button" id="btn-quick-fill-pin" style="background: none; border: none; color: var(--sp-orange); font-size: 0.8rem; cursor: pointer; text-decoration: underline; padding: 0;">Usar 1234</button>
         </div>
-        <small class="pin-hint">PIN predeterminado de fábrica: <strong>1234</strong> (puede ser cambiado en ajustes).</small>
 
         <div style="margin-top: 24px;">
           <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; padding: 13px;">
@@ -190,15 +192,15 @@
         <!-- Caja Contenedora con Pestañas -->
         <div class="admin-card-container">
           <!-- Navegación de Pestañas -->
-          <div class="admin-tabs">
-            <button class="admin-tab-btn active" data-tab="tab-inventory" id="tab-btn-inventory">
+          <div class="admin-tabs" role="tablist">
+            <button class="admin-tab-btn active" data-tab="tab-inventory" id="tab-btn-inventory" role="tab" aria-selected="true">
               <i class="fa-solid fa-list-check"></i> Lista de Inventario
               <span class="tab-counter" id="tab-inventory-counter">0</span>
             </button>
-            <button class="admin-tab-btn" data-tab="tab-publish" id="tab-btn-publish">
+            <button class="admin-tab-btn" data-tab="tab-publish" id="tab-btn-publish" role="tab" aria-selected="false">
               <i class="fa-solid fa-circle-plus"></i> <span id="tab-publish-label">Publicar Producto</span>
             </button>
-            <button class="admin-tab-btn" data-tab="tab-settings" id="tab-btn-settings">
+            <button class="admin-tab-btn" data-tab="tab-settings" id="tab-btn-settings" role="tab" aria-selected="false">
               <i class="fa-solid fa-sliders"></i> Respaldo & Ajustes
             </button>
           </div>
@@ -206,7 +208,7 @@
           <!-- ===============================================================
                PESTAÑA 1: LISTADO Y CONTROL RÁPIDO DE INVENTARIO
                =============================================================== -->
-          <div class="admin-tab-content active" id="tab-content-inventory">
+          <div class="admin-tab-content active" id="tab-inventory">
             <div class="admin-inventory-toolbar">
               <div class="admin-inventory-search">
                 <i class="fa-solid fa-magnifying-glass"></i>
@@ -244,7 +246,7 @@
           <!-- ===============================================================
                PESTAÑA 2: FORMULARIO DE PUBLICACIÓN / EDICIÓN
                =============================================================== -->
-          <div class="admin-tab-content" id="tab-content-publish">
+          <div class="admin-tab-content" id="tab-publish" style="display: none;">
             <div style="margin-bottom: 20px;">
               <h3 id="form-heading-title" style="color: var(--sp-heading-color); font-size: 1.25rem;">
                 <i class="fa-solid fa-plus-circle" style="color: var(--sp-orange);"></i> Publicar Nuevo Producto
@@ -357,7 +359,7 @@
           <!-- ===============================================================
                PESTAÑA 3: RESPALDO, SEGURIDAD & AJUSTES
                =============================================================== -->
-          <div class="admin-tab-content" id="tab-content-settings">
+          <div class="admin-tab-content" id="tab-settings" style="display: none;">
             <div style="margin-bottom: 22px;">
               <h3 style="color: var(--sp-heading-color); font-size: 1.25rem;">
                 <i class="fa-solid fa-shield-halved" style="color: var(--sp-orange);"></i> Seguridad, Respaldo & Configuración
