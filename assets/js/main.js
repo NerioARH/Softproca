@@ -641,16 +641,61 @@ document.addEventListener('DOMContentLoaded', () => {
     renderCatalog();
   }
 
-  // Escuchar cambios de inventario en tiempo real desde el panel de administración (en otra pestaña)
+  // =========================================================================
+  // SINCRONIZACIÓN EN TIEMPO REAL ENTRE ADMIN Y TIENDA PÚBLICA
+  // =========================================================================
+  function reloadAndSyncCatalog() {
+    loadProductsCatalog();
+    if (catalogGrid) {
+      renderCatalog();
+    }
+    updateCartUI();
+  }
+
+  // 1. Escuchar eventos storage estándar (cuando son pestañas con HTTP/HTTPS)
   window.addEventListener('storage', (e) => {
     if (e.key === 'softproca-products-catalog') {
-      loadProductsCatalog();
-      if (catalogGrid) {
-        renderCatalog();
-      }
-      updateCartUI();
+      reloadAndSyncCatalog();
     }
   });
+
+  // 2. Escuchar canal de difusión en tiempo real (BroadcastChannel entre pestañas)
+  try {
+    if (typeof BroadcastChannel !== 'undefined') {
+      const bc = new BroadcastChannel('softproca_catalog_channel');
+      bc.onmessage = (event) => {
+        if (event.data && event.data.type === 'CATALOG_UPDATED') {
+          reloadAndSyncCatalog();
+        }
+      };
+    }
+  } catch (bcErr) {}
+
+  // 3. Sincronización instantánea al cambiar de pestaña o volver a la tienda
+  window.addEventListener('focus', reloadAndSyncCatalog);
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible') {
+      reloadAndSyncCatalog();
+    }
+  });
+  window.addEventListener('pageshow', reloadAndSyncCatalog);
+  window.addEventListener('softproca-catalog-changed', reloadAndSyncCatalog);
+
+  // 4. Polling ultra ligero y seguro para entornos locales file:/// (detecta cambios cada 1.2s)
+  let lastCatalogCache = '';
+  try {
+    lastCatalogCache = localStorage.getItem('softproca-products-catalog') || '';
+  } catch (e) {}
+
+  setInterval(() => {
+    try {
+      const currentStored = localStorage.getItem('softproca-products-catalog') || '';
+      if (currentStored && currentStored !== lastCatalogCache) {
+        lastCatalogCache = currentStored;
+        reloadAndSyncCatalog();
+      }
+    } catch (e) {}
+  }, 1200);
 
   // =========================================================================
   // 3. EXPLORADOR INTERACTIVO DE MODELOS SSD M.2 (Flyer Informativo)

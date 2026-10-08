@@ -363,7 +363,19 @@
 
     function saveCatalog(triggerRerender = true) {
       try {
-        safeStorageSet(STORAGE_KEY_CATALOG, JSON.stringify(productsData));
+        const rawJson = JSON.stringify(productsData);
+        safeStorageSet(STORAGE_KEY_CATALOG, rawJson);
+
+        // Emitir a través de BroadcastChannel a todas las pestañas de la tienda
+        try {
+          if (typeof BroadcastChannel !== 'undefined') {
+            const bc = new BroadcastChannel('softproca_catalog_channel');
+            bc.postMessage({ type: 'CATALOG_UPDATED', timestamp: Date.now() });
+          }
+        } catch (bcErr) {}
+
+        // Emitir evento local en window
+        window.dispatchEvent(new CustomEvent('softproca-catalog-changed', { detail: { products: productsData } }));
       } catch (e) {
         console.error('Error guardando catálogo:', e);
         showToast('Error de almacenamiento. Si usaste una imagen muy pesada, elimínala.', 'error');

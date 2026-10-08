@@ -2290,23 +2290,79 @@ button, input, select, textarea {
     font-size: 1.6rem;
   }
 
-  /* Tipografía y Hero en Móvil */
+  /* Tipografía y Hero en Móvil (Contención Absoluta Anti-Desbordamiento) */
   .hero {
-    padding: 32px 0 40px;
+    padding: 24px 0 36px;
+    text-align: center;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    display: none !important;
+  }
+
+  .hero-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+    width: 100%;
+    max-width: 100%;
+    gap: 22px;
+  }
+
+  .hero-grid > * {
+    min-width: 0;
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .hero-content {
+    min-width: 0;
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
     text-align: center;
   }
 
-  .hero-headline {
-    font-size: 1.62rem !important;
-    line-height: 1.25 !important;
+  /* Badge Tech Móvil: Envuelve texto limpiamente sin desbordar */
+  .badge-tech {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    padding: 6px 12px;
+    font-size: 0.72rem;
+    line-height: 1.3;
+    white-space: normal;
+    text-align: center;
+    letter-spacing: 0.5px;
+    box-sizing: border-box;
     margin-bottom: 12px;
+  }
+
+  .badge-tech .pulse-dot {
+    flex-shrink: 0;
+  }
+
+  /* Titular Hero: Tamaño fluido y ajuste estricto sin recortes */
+  .hero-headline {
+    font-size: clamp(1.3rem, 5.6vw, 1.6rem) !important;
+    line-height: 1.24 !important;
+    margin: 10px 0 14px;
+    width: 100%;
+    max-width: 100%;
     word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
   }
 
   .hero-lead {
-    font-size: 0.92rem;
-    line-height: 1.5;
-    margin-bottom: 20px;
+    font-size: 0.88rem;
+    line-height: 1.55;
+    margin: 0 auto 20px;
+    width: 100%;
+    max-width: 100%;
   }
 
   .hero-badge {
@@ -2315,37 +2371,81 @@ button, input, select, textarea {
     margin-bottom: 14px;
   }
 
+  /* Botones CTA en Móvil */
   .hero-actions,
   .hero-cta-group {
     display: flex;
     flex-direction: column;
     width: 100%;
+    max-width: 100%;
     gap: 10px;
-    margin-bottom: 24px;
+    margin: 0 auto 22px;
   }
 
   .hero-actions .btn,
   .hero-cta-group .btn {
     width: 100%;
     justify-content: center;
-    padding: 12px 18px;
+    padding: 13px 16px;
     font-size: 0.95rem;
+    white-space: normal;
   }
 
+  /* Estadísticas Hero Móvil */
   .hero-stats {
-    gap: 8px;
-    padding-top: 18px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 6px;
+    padding-top: 16px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .hero-stats > * {
+    min-width: 0;
+    max-width: 100%;
   }
 
   .stat-item .stat-num {
-    font-size: 1.25rem !important;
+    font-size: 1.12rem !important;
     justify-content: center;
+    word-break: break-all;
   }
 
   .stat-item .stat-label {
-    font-size: 0.68rem !important;
+    font-size: 0.65rem !important;
     line-height: 1.2;
     text-align: center;
+  }
+
+  /* Tarjeta Visual Hero Móvil */
+  .hero-visual {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .hero-card {
+    padding: 16px 12px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    border-radius: var(--sp-radius-lg);
+  }
+
+  .hero-card-img-wrap {
+    margin-bottom: 12px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .hero-card-info {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    text-align: center;
+    padding-top: 12px;
   }
 
   /* Encabezados de Sección */
