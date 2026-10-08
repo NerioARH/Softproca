@@ -137,6 +137,9 @@ html {
   font-size: 16px;
   color-scheme: var(--sp-color-scheme);
   transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
+  max-width: 100vw;
+  width: 100%;
 }
 
 body {
@@ -145,6 +148,8 @@ body {
   color: var(--sp-text-primary);
   line-height: 1.6;
   overflow-x: hidden;
+  max-width: 100vw;
+  width: 100%;
   position: relative;
   background-image: 
     radial-gradient(circle at 15% 15%, var(--sp-radial-glow1) 0%, transparent 40%),
@@ -1578,6 +1583,9 @@ button, input, select, textarea {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
 }
 
 .form-field label {
@@ -1594,6 +1602,9 @@ button, input, select, textarea {
   color: var(--sp-text-primary);
   font-size: 0.98rem;
   transition: var(--sp-transition);
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .form-input:focus, .form-select:focus, .form-textarea:focus {
@@ -1930,21 +1941,30 @@ button, input, select, textarea {
 .cart-drawer {
   position: fixed;
   top: 0;
-  right: -420px;
+  right: 0;
   width: 100%;
   max-width: 420px;
   height: 100vh;
   background: var(--sp-bg-card);
   border-left: 1px solid var(--sp-border);
   z-index: 10001;
-  display: flex;
+  display: none;
   flex-direction: column;
-  transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: -10px 0 30px rgba(0,0,0,0.5);
 }
 
 .cart-drawer.active {
-  right: 0;
+  display: flex;
+  animation: slideDrawerIn 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes slideDrawerIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
 }
 
 .cart-drawer-header {
@@ -2134,50 +2154,377 @@ button, input, select, textarea {
 }
 
 @media (max-width: 768px) {
+  /* Contenedores y Viewport */
+  .container {
+    padding: 0 16px;
+  }
+
+  /* Barra Superior: Ocultar en móvil para ganar espacio vertical limpio */
+  .topbar {
+    display: none;
+  }
+
+  /* Navbar Móvil Ultra Optimizado */
+  .navbar {
+    padding: 0;
+  }
+
+  .nav-container {
+    padding: 10px 16px;
+    gap: 8px;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  .brand-logo img {
+    height: 36px !important;
+    max-width: 130px;
+    object-fit: contain;
+  }
+
+  /* Acciones de Navbar en Móvil: solo iconos compactos */
+  .nav-actions {
+    gap: 8px;
+  }
+
+  .theme-toggle-btn {
+    padding: 8px 10px;
+    font-size: 0.95rem;
+    border-radius: var(--sp-radius-sm);
+  }
+
+  .theme-toggle-btn .theme-toggle-text {
+    display: none !important;
+  }
+
+  .cart-toggle-btn {
+    padding: 8px 11px;
+    font-size: 0.9rem;
+    border-radius: var(--sp-radius-sm);
+  }
+
+  .cart-toggle-btn span:not(.cart-badge-count) {
+    display: none !important;
+  }
+
+  .cart-badge-count {
+    margin-left: 4px;
+  }
+
+  /* Ocultar botón de soporte en navbar móvil porque ya existe el botón flotante */
+  .nav-actions .btn-whatsapp {
+    display: none !important;
+  }
+
+  .mobile-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    font-size: 1.2rem;
+    border-radius: var(--sp-radius-sm);
+    background: var(--sp-bg-card);
+    border: 1px solid var(--sp-border);
+    color: var(--sp-heading-color);
+  }
+
+  /* Menú Desplegable Off-Canvas Flotante Directamente Bajo el Navbar */
   .nav-links {
-    position: fixed;
-    top: 70px;
+    position: absolute;
+    top: 100%;
     left: 0;
     width: 100%;
     background: var(--sp-bg-card);
-    border-bottom: 1px solid var(--sp-border);
+    border-bottom: 2px solid var(--sp-orange);
     flex-direction: column;
-    padding: 24px;
-    gap: 16px;
-    transform: translateY(-150%);
-    transition: transform 0.35s ease;
-    box-shadow: var(--sp-shadow-card);
+    padding: 14px 16px;
+    gap: 6px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-8px);
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.28);
+    z-index: 9999;
   }
+
   .nav-links.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
     transform: translateY(0);
   }
-  .mobile-toggle {
+
+  .nav-link {
     display: block;
+    width: 100%;
+    padding: 11px 16px;
+    border-radius: var(--sp-radius-sm);
+    font-size: 1rem;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
   }
+
+  .nav-link.active,
+  .nav-link:hover {
+    background: var(--sp-orange-dim);
+    color: var(--sp-orange);
+  }
+
+  /* Botón Flotante de WhatsApp: Ocultar Tooltip molesto en móvil */
+  .whatsapp-float-widget {
+    bottom: 18px;
+    right: 18px;
+    z-index: 9998;
+  }
+
+  .whatsapp-tooltip {
+    display: none !important;
+  }
+
+  .whatsapp-float-btn {
+    width: 52px;
+    height: 52px;
+    font-size: 1.6rem;
+  }
+
+  /* Tipografía y Hero en Móvil */
+  .hero {
+    padding: 32px 0 40px;
+    text-align: center;
+  }
+
+  .hero-headline {
+    font-size: 1.62rem !important;
+    line-height: 1.25 !important;
+    margin-bottom: 12px;
+    word-break: break-word;
+  }
+
+  .hero-lead {
+    font-size: 0.92rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+
+  .hero-badge {
+    font-size: 0.76rem;
+    padding: 4px 12px;
+    margin-bottom: 14px;
+  }
+
+  .hero-actions,
+  .hero-cta-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+
+  .hero-actions .btn,
+  .hero-cta-group .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 18px;
+    font-size: 0.95rem;
+  }
+
+  .hero-stats {
+    gap: 8px;
+    padding-top: 18px;
+  }
+
+  .stat-item .stat-num {
+    font-size: 1.25rem !important;
+    justify-content: center;
+  }
+
+  .stat-item .stat-label {
+    font-size: 0.68rem !important;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  /* Encabezados de Sección */
+  .section-header {
+    margin-bottom: 26px;
+    text-align: center;
+  }
+
+  .section-header .title {
+    font-size: 1.65rem !important;
+  }
+
+  .section-header .subtitle {
+    font-size: 0.88rem;
+  }
+
+  .section-padding {
+    padding: 40px 0;
+  }
+
+  /* Filtros de Productos Deslizables en Móvil (Swipe Horizontal Tipo App) */
+  .product-filters {
+    display: flex;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 8px;
+    padding: 4px 16px 14px;
+    margin: 0 -16px 20px -16px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .product-filters::-webkit-scrollbar {
+    display: none;
+  }
+
+  .filter-btn {
+    flex-shrink: 0;
+    padding: 8px 16px;
+    font-size: 0.82rem;
+    white-space: nowrap;
+  }
+
+  .products-catalog {
+    grid-template-columns: 1fr !important;
+    gap: 16px;
+  }
+
+  .product-card {
+    padding: 18px;
+  }
+
+  .product-image-container {
+    height: 150px;
+  }
+
+  .product-title {
+    font-size: 1.18rem;
+  }
+
+  .product-actions {
+    flex-direction: row;
+    gap: 8px;
+  }
+
+  .product-actions .btn {
+    flex: 1;
+    justify-content: center;
+    font-size: 0.85rem;
+    padding: 8px 10px;
+  }
+
+  .products-search-wrap {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  /* Grillas de Servicios, Tips y Funcionalidades */
+  .features-grid,
+  .services-grid,
+  .tips-grid,
+  .software-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px;
+  }
+
+  /* Agendar Citas & Ubicación */
   .modality-options-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr !important;
+    gap: 10px;
   }
+
+  .modality-card {
+    padding: 14px 16px;
+  }
+
   .form-fields-row {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 12px;
+    width: 100%;
   }
+
+  .form-fields-row > * {
+    min-width: 0;
+    max-width: 100%;
+  }
+
   .booking-wrapper {
-    padding: 24px 18px;
+    padding: 20px 14px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
+
+  #map-container {
+    height: 270px !important;
+  }
+
+  .location-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 20px;
+    width: 100%;
+  }
+
+  .location-grid > * {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .location-info-card {
+    padding: 20px 14px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    border-radius: var(--sp-radius-lg);
+  }
+
+  .location-official-address {
+    padding: 14px 14px;
+    margin: 14px 0 18px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .location-official-address .address-text {
+    font-size: 1.05rem;
+    line-height: 1.35;
+    word-break: break-word;
+  }
+
+  .location-details-list {
+    padding: 0;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .location-details-list li {
+    word-break: break-word;
+  }
+
+  .support-phone-badge {
+    font-size: 1.25rem;
+    padding: 10px 16px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Pie de Página */
   .footer-grid {
     grid-template-columns: 1fr;
+    gap: 24px;
   }
-  .hero-headline {
-    font-size: 2.2rem;
-  }
-  .section-header .title {
-    font-size: 2rem;
-  }
-  .support-phone-badge {
-    font-size: 1.4rem;
-    padding: 10px 18px;
-  }
-  .theme-toggle-btn .theme-toggle-text {
-    display: none;
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
   }
 }
 
@@ -3117,9 +3464,110 @@ button, input, select, textarea {
 
 @media (max-width: 576px) {
   .admin-kpi-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px;
   }
   .admin-card-container {
-    padding: 20px 14px;
+    padding: 16px 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .admin-navbar-inner {
+    padding: 10px 16px;
+    gap: 10px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .admin-navbar-left {
+    justify-content: space-between;
+    width: 100%;
+  }
+  .admin-navbar-right {
+    justify-content: space-between;
+    width: 100%;
+    gap: 8px;
+  }
+  .admin-navbar-right .btn,
+  .admin-navbar-right .theme-toggle-btn,
+  .admin-navbar-right .btn-logout {
+    font-size: 0.82rem;
+    padding: 7px 10px;
+  }
+  .admin-kpi-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px;
+  }
+  .admin-kpi-card {
+    padding: 12px 14px;
+    gap: 12px;
+  }
+  .admin-kpi-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.15rem;
+  }
+  .admin-kpi-value {
+    font-size: 1.35rem;
+  }
+  .admin-view-title {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .admin-view-title .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .admin-tabs {
+    gap: 4px;
+  }
+  .admin-tab-btn {
+    padding: 8px 10px;
+    font-size: 0.85rem;
+  }
+  .admin-inventory-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  .admin-inventory-search {
+    width: 100%;
+    min-width: unset;
+  }
+  .admin-inventory-item {
+    grid-template-columns: 44px 1fr !important;
+    gap: 10px;
+    padding: 12px;
+  }
+  .admin-inventory-item .admin-item-price,
+  .admin-inventory-item .admin-stock-select,
+  .admin-inventory-item .admin-item-actions {
+    grid-column: 1 / -1 !important;
+  }
+  .admin-inventory-item .admin-item-actions {
+    justify-content: flex-end;
+  }
+  .admin-form-grid {
+    grid-template-columns: 1fr !important;
+    gap: 14px;
+  }
+  .backup-cards-grid {
+    grid-template-columns: 1fr !important;
+    gap: 14px;
+  }
+  .admin-login-card {
+    padding: 24px 18px;
+    max-width: 100%;
+  }
+  .toast {
+    max-width: calc(100vw - 32px);
+    font-size: 0.85rem;
+    padding: 10px 14px;
+  }
+  .toast-container {
+    bottom: 16px;
+    right: 16px;
+    left: 16px;
   }
 }
