@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel de Administración & Inventario | SOFTPROCA</title>
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo-icon.svg">
+
+  <!-- Hojas de Estilo -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Detección Inmediata de Tema -->
+  <script>
+    (function() {
+      try {
+        const savedTheme = localStorage.getItem('softproca-theme');
+        if (savedTheme === 'dark') {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- =========================================================================
+       1. PANTALLA DE ACCESO PRIVADO (LOGIN POR PIN)
+       ========================================================================= -->
+  <div id="admin-login-screen" class="admin-standalone-login">
+    <div class="admin-login-card">
+      <div class="admin-login-brand">
+        <a href="index.html">
+          <img src="assets/images/logo-banner.png" alt="SOFTPROCA Logo Oficial" onerror="this.src='assets/images/logo-sq.jpg'">
+        </a>
+        <h2>Gestión Privada de Catálogo</h2>
+        <p>Ingresa tu clave de seguridad PIN para acceder al administrador</p>
+      </div>
+
+      <div class="auth-icon-wrap">
+        <i class="fa-solid fa-lock"></i>
+      </div>
+
+      <div id="admin-pin-error" class="auth-error-msg" style="display: none;">
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        <span id="admin-pin-error-text">El PIN ingresado es incorrecto.</span>
+      </div>
+
+      <form id="admin-login-form">
+        <label for="admin-pin-input" style="font-weight: 600; font-size: 0.9rem; margin-bottom: 6px; display: block;">Código PIN de Acceso</label>
+        <div class="pin-input-wrap">
+          <i class="fa-solid fa-key"></i>
+          <input type="password" id="admin-pin-input" placeholder="••••" maxlength="8" autocomplete="current-password" autofocus required>
+          <button type="button" class="pin-toggle-visibility" id="admin-pin-toggle-btn" aria-label="Mostrar o esconder PIN" title="Mostrar/Ocultar PIN">
+            <i class="fa-solid fa-eye" id="admin-pin-eye-icon"></i>
+          </button>
+        </div>
+        <small class="pin-hint">PIN predeterminado de fábrica: <strong>1234</strong> (puede ser cambiado en ajustes).</small>
+
+        <div style="margin-top: 24px;">
+          <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; padding: 13px;">
+            <i class="fa-solid fa-unlock-keyhole"></i> Desbloquear Administrador
+          </button>
+        </div>
+      </form>
+
+      <div class="admin-login-security-notice">
+        <i class="fa-solid fa-shield-halved" style="color: var(--sp-orange); font-size: 1.1rem; margin-top: 2px;"></i>
+        <div>
+          <strong>Módulo Privado SOFTPROCA</strong>
+          <p style="margin: 2px 0 0; font-size: 0.78rem;">Esta sección es invisible para clientes de la tienda y permite publicar productos y ajustar inventario en tiempo real.</p>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 20px;">
+        <a href="productos.html" style="font-size: 0.85rem; color: var(--sp-text-muted); text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+          <i class="fa-solid fa-arrow-left"></i> Volver a la Tienda Pública
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       2. PANEL COMPLETO DE ADMINISTRACIÓN (DASHBOARD)
+       ========================================================================= -->
+  <div id="admin-dashboard-screen" class="admin-standalone-wrapper" style="display: none;">
+    <!-- Barra Superior de Navegación del Administrador -->
+    <header class="admin-navbar">
+      <div class="container admin-navbar-inner">
+        <div class="admin-navbar-left">
+          <a href="index.html">
+            <img src="assets/images/logo-banner.png" alt="SOFTPROCA Logo Oficial" onerror="this.src='assets/images/logo-sq.jpg'">
+          </a>
+          <span class="admin-pill">
+            <i class="fa-solid fa-shield-halved"></i> <strong>Panel Administrativo</strong>
+          </span>
+          <span class="admin-subtext hide-on-mobile">
+            <i class="fa-solid fa-circle" style="color: #10B981; font-size: 8px;"></i> Sesión Activa
+          </span>
+        </div>
+
+        <div class="admin-navbar-right">
+          <!-- Enlace a Tienda Pública -->
+          <a href="productos.html" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" title="Abrir tienda en nueva pestaña">
+            <i class="fa-solid fa-store"></i> <span class="hide-on-mobile">Ver Tienda Pública</span>
+          </a>
+
+          <!-- Botón de Tema (Claro / Oscuro) -->
+          <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Cambiar tema claro u oscuro" title="Cambiar tema">
+            <i class="fa-solid fa-moon theme-icon" id="theme-icon"></i>
+            <span class="theme-toggle-text" id="theme-text">Modo Oscuro</span>
+          </button>
+
+          <!-- Cerrar Sesión -->
+          <button class="btn-logout" id="admin-logout-btn" title="Cerrar sesión de administrador">
+            <i class="fa-solid fa-right-from-bracket"></i> Salir
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="admin-main-container">
+      <div class="container">
+        <!-- Título y Acción Rápida -->
+        <div class="admin-view-title">
+          <div>
+            <h1><i class="fa-solid fa-boxes-stacked" style="color: var(--sp-orange);"></i> Control de Inventario & Publicaciones</h1>
+            <p>Gestiona productos, precios, fotos y existencias en tiempo real sincronizado con la tienda pública.</p>
+          </div>
+          <div>
+            <button class="btn btn-primary" id="btn-quick-new-product">
+              <i class="fa-solid fa-plus"></i> Publicar Nuevo Producto
+            </button>
+          </div>
+        </div>
+
+        <!-- Tarjetas de Métricas / KPIs de Inventario -->
+        <div class="admin-kpi-grid">
+          <div class="admin-kpi-card">
+            <div class="admin-kpi-icon">
+              <i class="fa-solid fa-box-open"></i>
+            </div>
+            <div class="admin-kpi-content">
+              <span class="admin-kpi-value" id="kpi-total-products">0</span>
+              <span class="admin-kpi-label">Total en Catálogo</span>
+            </div>
+          </div>
+
+          <div class="admin-kpi-card">
+            <div class="admin-kpi-icon success">
+              <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <div class="admin-kpi-content">
+              <span class="admin-kpi-value" id="kpi-in-stock">0</span>
+              <span class="admin-kpi-label">En Stock (Disponibles)</span>
+            </div>
+          </div>
+
+          <div class="admin-kpi-card">
+            <div class="admin-kpi-icon warning">
+              <i class="fa-solid fa-triangle-exclamation"></i>
+            </div>
+            <div class="admin-kpi-content">
+              <span class="admin-kpi-value" id="kpi-low-stock">0</span>
+              <span class="admin-kpi-label">Pocas Unidades</span>
+            </div>
+          </div>
+
+          <div class="admin-kpi-card">
+            <div class="admin-kpi-icon danger">
+              <i class="fa-solid fa-circle-xmark"></i>
+            </div>
+            <div class="admin-kpi-content">
+              <span class="admin-kpi-value" id="kpi-out-of-stock">0</span>
+              <span class="admin-kpi-label">Agotados</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Caja Contenedora con Pestañas -->
+        <div class="admin-card-container">
+          <!-- Navegación de Pestañas -->
+          <div class="admin-tabs">
+            <button class="admin-tab-btn active" data-tab="tab-inventory" id="tab-btn-inventory">
+              <i class="fa-solid fa-list-check"></i> Lista de Inventario
+              <span class="tab-counter" id="tab-inventory-counter">0</span>
+            </button>
+            <button class="admin-tab-btn" data-tab="tab-publish" id="tab-btn-publish">
+              <i class="fa-solid fa-circle-plus"></i> <span id="tab-publish-label">Publicar Producto</span>
+            </button>
+            <button class="admin-tab-btn" data-tab="tab-settings" id="tab-btn-settings">
+              <i class="fa-solid fa-sliders"></i> Respaldo & Ajustes
+            </button>
+          </div>
+
+          <!-- ===============================================================
+               PESTAÑA 1: LISTADO Y CONTROL RÁPIDO DE INVENTARIO
+               =============================================================== -->
+          <div class="admin-tab-content active" id="tab-content-inventory">
+            <div class="admin-inventory-toolbar">
+              <div class="admin-inventory-search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="admin-search-input" placeholder="Buscar por nombre, modelo, capacidad o categoría...">
+              </div>
+
+              <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                <select id="admin-filter-category" class="admin-stock-select" style="min-width: 150px; padding: 8px 12px;">
+                  <option value="all">Todas las Categorías</option>
+                  <option value="ssd">Discos SSD M.2 & SATA</option>
+                  <option value="ram">Memorias RAM</option>
+                  <option value="componentes">Componentes & Pasta</option>
+                  <option value="software">Software & Soporte</option>
+                </select>
+
+                <select id="admin-filter-stock" class="admin-stock-select" style="min-width: 150px; padding: 8px 12px;">
+                  <option value="all">Todos los Estados</option>
+                  <option value="in_stock">Solo En Stock</option>
+                  <option value="low_stock">Pocas Unidades</option>
+                  <option value="out_of_stock">Solo Agotados</option>
+                </select>
+
+                <button class="btn btn-outline btn-sm" id="admin-refresh-btn" title="Refrescar lista">
+                  <i class="fa-solid fa-rotate"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Listado de Productos -->
+            <div class="admin-inventory-list" id="admin-inventory-list">
+              <!-- Renderizado dinámicamente con JavaScript -->
+            </div>
+          </div>
+
+          <!-- ===============================================================
+               PESTAÑA 2: FORMULARIO DE PUBLICACIÓN / EDICIÓN
+               =============================================================== -->
+          <div class="admin-tab-content" id="tab-content-publish">
+            <div style="margin-bottom: 20px;">
+              <h3 id="form-heading-title" style="color: var(--sp-heading-color); font-size: 1.25rem;">
+                <i class="fa-solid fa-plus-circle" style="color: var(--sp-orange);"></i> Publicar Nuevo Producto
+              </h3>
+              <p style="font-size: 0.85rem; color: var(--sp-text-muted);">
+                Completa los datos del producto. Se publicará inmediatamente en la tienda pública de SOFTPROCA.
+              </p>
+            </div>
+
+            <form id="admin-product-form" class="admin-form">
+              <!-- ID oculto para saber si es creación o edición -->
+              <input type="hidden" id="product-edit-id" value="">
+
+              <div class="admin-form-grid">
+                <!-- Nombre del Producto -->
+                <div class="form-full-width">
+                  <label for="product-name">Nombre Comercial del Producto *</label>
+                  <input type="text" id="product-name" placeholder="Ej: SSD M.2 NVMe 1TB Kingston NV2 PCIe 4.0" required>
+                </div>
+
+                <!-- Categoría -->
+                <div>
+                  <label for="product-category">Categoría *</label>
+                  <select id="product-category" required>
+                    <option value="ssd">Discos SSD M.2 & SATA</option>
+                    <option value="ram">Memorias RAM DDR4 / DDR5</option>
+                    <option value="componentes">Componentes, Pastas & Herramientas</option>
+                    <option value="software">Software & Licenciamiento</option>
+                  </select>
+                </div>
+
+                <!-- Precio en USD -->
+                <div>
+                  <label for="product-price">Precio en Dólares ($ USD) *</label>
+                  <input type="number" id="product-price" min="1" step="0.5" placeholder="Ej: 45" required>
+                </div>
+
+                <!-- Estado de Stock -->
+                <div>
+                  <label for="product-stock-status">Disponibilidad de Inventario *</label>
+                  <select id="product-stock-status" required>
+                    <option value="in_stock">🟢 En Stock (Disponible para entrega)</option>
+                    <option value="low_stock">🟡 Pocas Unidades (Alerta en tienda)</option>
+                    <option value="out_of_stock">🔴 Agotado (No permite cotizar)</option>
+                  </select>
+                </div>
+
+                <!-- Etiqueta / Badge Promocional -->
+                <div>
+                  <label for="product-badge">Etiqueta Destacada (Opcional)</label>
+                  <input type="text" id="product-badge" placeholder="Ej: Más Vendido, Oferta, Top, Nuevo" maxlength="24">
+                </div>
+
+                <!-- Icono de Representación -->
+                <div>
+                  <label for="product-icon">Icono Visual</label>
+                  <select id="product-icon">
+                    <option value="fa-hard-drive">💾 Disco / SSD (fa-hard-drive)</option>
+                    <option value="fa-microchip">🔬 Chip / Procesador (fa-microchip)</option>
+                    <option value="fa-memory">🧠 Memoria RAM (fa-memory)</option>
+                    <option value="fa-database">🗄️ Base de Datos / Unidad 2.5 (fa-database)</option>
+                    <option value="fa-temperature-arrow-down">❄️ Pasta Térmica / Refrigeración</option>
+                    <option value="fa-screwdriver-wrench">🛠️ Herramienta / Caddy</option>
+                    <option value="fa-laptop-code">💻 Software / Suite</option>
+                    <option value="fa-bolt">⚡ Rendimiento / Fuente</option>
+                    <option value="fa-box">📦 General / Accesorio</option>
+                  </select>
+                </div>
+
+                <!-- Subir Foto Real del Producto -->
+                <div>
+                  <label>Foto Real del Producto (Opcional)</label>
+                  <div class="image-upload-wrapper">
+                    <div>
+                      <input type="file" id="product-image-file" accept="image/png, image/jpeg, image/webp" style="font-size: 0.85rem;">
+                      <small style="color: var(--sp-text-muted); display: block; margin-top: 4px; font-size: 0.78rem;">
+                        Se optimiza automáticamente para carga ultra rápida.
+                      </small>
+                      <input type="hidden" id="product-image-data" value="">
+                    </div>
+                    <div class="image-preview-box" id="product-image-preview-box">
+                      <i class="fa-solid fa-image" id="product-image-preview-placeholder"></i>
+                      <img id="product-image-preview-img" src="" alt="Vista previa" style="display: none;">
+                      <button type="button" class="btn-remove-preview" id="btn-remove-image" style="display: none;" title="Quitar imagen">
+                        <i class="fa-solid fa-xmark"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Especificaciones Clave / Descripción -->
+                <div class="form-full-width">
+                  <label for="product-specs">Especificaciones Técnicas / Descripción para el Cliente *</label>
+                  <textarea id="product-specs" rows="3" placeholder="Ej: Velocidad hasta 3500 MB/s lectura. Formato 2280 estándar compatible con Laptops y PCs. Garantía 1 año." required></textarea>
+                </div>
+              </div>
+
+              <!-- Botones del Formulario -->
+              <div class="admin-form-actions">
+                <button type="button" class="btn btn-outline" id="btn-cancel-edit" style="display: none;">
+                  <i class="fa-solid fa-xmark"></i> Cancelar Edición
+                </button>
+                <button type="submit" class="btn btn-primary" id="btn-submit-product">
+                  <i class="fa-solid fa-floppy-disk"></i> <span id="btn-submit-text">Guardar y Publicar en Tienda</span>
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <!-- ===============================================================
+               PESTAÑA 3: RESPALDO, SEGURIDAD & AJUSTES
+               =============================================================== -->
+          <div class="admin-tab-content" id="tab-content-settings">
+            <div style="margin-bottom: 22px;">
+              <h3 style="color: var(--sp-heading-color); font-size: 1.25rem;">
+                <i class="fa-solid fa-shield-halved" style="color: var(--sp-orange);"></i> Seguridad, Respaldo & Configuración
+              </h3>
+              <p style="font-size: 0.85rem; color: var(--sp-text-muted);">
+                Herramientas para respaldar tu catálogo, restaurar copias y gestionar tu código PIN de acceso.
+              </p>
+            </div>
+
+            <div class="backup-cards-grid">
+              <!-- Tarjeta 1: Exportar Catálogo JSON -->
+              <div class="backup-card">
+                <div>
+                  <div class="backup-card-icon">
+                    <i class="fa-solid fa-cloud-arrow-down"></i>
+                  </div>
+                  <h4>Descargar Copia de Seguridad</h4>
+                  <p>Descarga un archivo <code>catalogo-softproca.json</code> con todos los productos, fotos, precios y estados actuales para guardarlo en tu computadora o pendrive.</p>
+                </div>
+                <button type="button" class="btn btn-outline" id="btn-export-json" style="width: 100%; justify-content: center;">
+                  <i class="fa-solid fa-download"></i> Descargar Copia (.JSON)
+                </button>
+              </div>
+
+              <!-- Tarjeta 2: Importar Catálogo JSON -->
+              <div class="backup-card">
+                <div>
+                  <div class="backup-card-icon">
+                    <i class="fa-solid fa-cloud-arrow-up"></i>
+                  </div>
+                  <h4>Restaurar desde Respaldo</h4>
+                  <p>Carga un archivo de respaldo <code>.json</code> previamente descargado para recuperar tu catálogo de productos en cualquier momento.</p>
+                </div>
+                <div>
+                  <input type="file" id="input-import-json" accept=".json" style="display: none;">
+                  <button type="button" class="btn btn-outline" id="btn-trigger-import-json" style="width: 100%; justify-content: center;">
+                    <i class="fa-solid fa-folder-open"></i> Seleccionar Archivo .JSON
+                  </button>
+                </div>
+              </div>
+
+              <!-- Tarjeta 3: Cambiar Código PIN -->
+              <div class="backup-card">
+                <div>
+                  <div class="backup-card-icon">
+                    <i class="fa-solid fa-key"></i>
+                  </div>
+                  <h4>Cambiar PIN de Acceso</h4>
+                  <p>Actualiza la clave numérica privada de 4 a 8 dígitos para acceder a este panel de administración.</p>
+                  
+                  <form id="form-change-pin" style="margin-top: 14px;">
+                    <div style="display: flex; flex-direction: column; gap: 10px;">
+                      <div>
+                        <label for="change-pin-current" style="font-size: 0.8rem; font-weight: 600; display: block; margin-bottom: 4px;">PIN Actual:</label>
+                        <input type="password" id="change-pin-current" placeholder="PIN actual" maxlength="8" required style="width: 100%; padding: 8px 12px; background: var(--sp-input-bg); border: 1px solid var(--sp-border); border-radius: var(--sp-radius-sm); color: var(--sp-text-primary);">
+                      </div>
+                      <div>
+                        <label for="change-pin-new" style="font-size: 0.8rem; font-weight: 600; display: block; margin-bottom: 4px;">Nuevo PIN:</label>
+                        <input type="password" id="change-pin-new" placeholder="Nuevo PIN (mín. 4 dígitos)" maxlength="8" required style="width: 100%; padding: 8px 12px; background: var(--sp-input-bg); border: 1px solid var(--sp-border); border-radius: var(--sp-radius-sm); color: var(--sp-text-primary);">
+                      </div>
+                      <button type="submit" class="btn btn-primary btn-sm" style="margin-top: 6px; justify-content: center;">
+                        <i class="fa-solid fa-check"></i> Actualizar PIN
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+
+              <!-- Tarjeta 4: Restablecer Catálogo de Fábrica -->
+              <div class="backup-card">
+                <div>
+                  <div class="backup-card-icon" style="color: #EF4444;">
+                    <i class="fa-solid fa-rotate-left"></i>
+                  </div>
+                  <h4>Restablecer Productos Originales</h4>
+                  <p>Restaura la lista original de productos de SOFTPROCA (SSD NVMe, memorias RAM, pasta térmica, etc.) si deseas empezar de nuevo.</p>
+                </div>
+                <button type="button" class="btn btn-outline" id="btn-reset-catalog" style="width: 100%; justify-content: center; color: #EF4444; border-color: rgba(239, 68, 68, 0.4);">
+                  <i class="fa-solid fa-trash-can"></i> Restablecer de Fábrica
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer Simple de Administración -->
+    <footer style="border-top: 1px solid var(--sp-border); padding: 18px 0; background: var(--sp-bg-card); text-align: center; font-size: 0.82rem; color: var(--sp-text-muted);">
+      <div class="container">
+        SOFTPROCA &copy; 2026 &bull; Panel Privado de Administración &bull; Soporte Técnico: +58 424-6402032
+      </div>
+    </footer>
+  </div>
+
+  <!-- Contenedor de Alertas Flotantes Toast -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Script Lógico del Panel de Administración -->
+  <script src="assets/js/admin.js"></script>
+</body>
+</html>

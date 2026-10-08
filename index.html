@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SOFTPROCA | ¡Somos tu aliado tecnológico! - Maracaibo</title>
+  <meta name="description" content="SOFTPROCA C.A. - Tu aliado tecnológico en Maracaibo. Especialistas en servicios de instalación de software de diseño, venta de hardware, discos SSD M.2 y soporte técnico.">
+  <meta name="keywords" content="Softproca, Maracaibo, servicios tecnicos, venta hardware, instalacion software, AutoCAD, Revit, SSD M.2, soporte tecnico Zulia">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo-icon.svg">
+
+  <!-- Hojas de Estilo -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Detección Inmediata de Tema (Modo Claro Predeterminado de la Marca) -->
+  <script>
+    (function() {
+      try {
+        const savedTheme = localStorage.getItem('softproca-theme');
+        if (savedTheme === 'dark') {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+          // Predominio de blanco y estilo oficial por defecto
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- =========================================================================
+       TOP BAR INFORMATIVA
+       ========================================================================= -->
+  <aside class="topbar">
+    <div class="container topbar-content">
+      <div class="topbar-info">
+        <span><i class="fa-solid fa-location-dot" style="color: var(--sp-orange);"></i> Av 5 de Julio con Calle 71. Edif. Flamingo, Maracaibo</span>
+        <a href="tel:+584246402032"><i class="fa-solid fa-phone" style="color: var(--sp-orange);"></i> +58 424-6402032</a>
+        <span><i class="fa-regular fa-clock" style="color: var(--sp-orange);"></i> Lun - Sáb: 8:30 AM - 5:30 PM</span>
+      </div>
+      <div class="topbar-slogan">
+        <i class="fa-solid fa-bolt"></i> ¡Somos tu aliado tecnológico!
+      </div>
+    </div>
+  </aside>
+
+  <!-- =========================================================================
+       NAVBAR PRINCIPAL
+       ========================================================================= -->
+  <header>
+    <nav class="navbar" id="navbar">
+      <div class="container nav-container">
+        <!-- Logo de Marca -->
+        <a href="index.html" class="brand-logo" aria-label="Inicio SOFTPROCA">
+          <img src="assets/images/logo-banner.png" alt="SOFTPROCA Logo Oficial" onerror="this.src='assets/images/logo-sq.jpg'">
+        </a>
+
+        <!-- Menú de Navegación Multi-página -->
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link active">Inicio</a></li>
+          <li><a href="servicios.html" class="nav-link">Servicios</a></li>
+          <li><a href="productos.html" class="nav-link">Venta de Productos</a></li>
+          <li><a href="tips.html" class="nav-link">Tips Tech</a></li>
+          <li><a href="citas-ubicacion.html" class="nav-link">Citas & Ubicación</a></li>
+        </ul>
+
+        <!-- Acciones: Tema, Cotizar y WhatsApp -->
+        <div class="nav-actions">
+          <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Cambiar tema claro u oscuro" title="Cambiar tema">
+            <i class="fa-solid fa-moon theme-icon" id="theme-icon"></i>
+            <span class="theme-toggle-text" id="theme-text">Modo Oscuro</span>
+          </button>
+
+          <button class="cart-toggle-btn" id="cart-toggle-btn" aria-label="Ver Cotización">
+            <i class="fa-solid fa-receipt"></i>
+            <span>Cotizar</span>
+            <span class="cart-badge-count" id="cart-badge">0</span>
+          </button>
+
+          <a href="https://wa.me/584246402032?text=Hola%20SOFTPROCA!%20%C2%A1Somos%20tu%20aliado%20tecnol%C3%B3gico!%20Deseo%20hacer%20una%20consulta." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm">
+            <i class="fa-brands fa-whatsapp"></i> Soporte
+          </a>
+
+          <button class="mobile-toggle" aria-label="Abrir Menú">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- =========================================================================
+         HERO SECTION INSTITUCIONAL (EQUILIBRADO)
+         ========================================================================= -->
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="badge-tech">
+            <span class="pulse-dot"></span>
+            Soluciones Informáticas en Maracaibo
+          </div>
+
+          <h1 class="hero-headline">
+            ¡Somos tu <span class="highlight">aliado tecnológico</span> de confianza!
+          </h1>
+
+          <p class="hero-lead">
+            Brindamos servicios especializados en instalación de software para arquitectura y diseño, venta de componentes y almacenamiento de alta velocidad, mantenimiento preventivo y soporte técnico calificado.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="servicios.html" class="btn btn-primary">
+              <i class="fa-solid fa-screwdriver-wrench"></i> Ver Nuestros Servicios
+            </a>
+            <a href="productos.html" class="btn btn-secondary">
+              <i class="fa-solid fa-bag-shopping"></i> Tienda de Productos
+            </a>
+            <a href="citas-ubicacion.html" class="btn btn-secondary">
+              <i class="fa-regular fa-calendar-check"></i> Agendar Cita
+            </a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-item">
+              <div class="stat-num">100<span>%</span></div>
+              <div class="stat-label">Garantía Técnica</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-num">Multi<span>Area</span></div>
+              <div class="stat-label">Software & Hardware</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-num">+58<span>424</span></div>
+              <div class="stat-label">Soporte Inmediato</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Columna Visual Hero -->
+        <div class="hero-visual">
+          <div class="hero-card">
+            <div class="hero-card-img-wrap">
+              <img src="assets/images/logo-sq.jpg" alt="SOFTPROCA Identidad Visual" />
+            </div>
+            <div class="hero-card-info">
+              <div class="hero-card-status">
+                <span class="status-indicator"></span>
+                <div>
+                  <strong style="display:block; font-size: 0.95rem; color: var(--sp-heading-color);">SOFTPROCA C.A.</strong>
+                  <small style="color: var(--sp-text-muted);">Edif. Flamingo, P/B - Maracaibo</small>
+                </div>
+              </div>
+              <div class="hero-card-tags">
+                <span class="tag-pill">SOFTWARE</span>
+                <span class="tag-pill">HARDWARE</span>
+                <span class="tag-pill">SOPORTE</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         ACCESOS DIRECTOS A LAS 4 PÁGINAS PRINCIPALES
+         ========================================================================= -->
+    <section class="container">
+      <div class="overview-sections-grid">
+        <!-- Tarjeta 1: Servicios -->
+        <div class="overview-card">
+          <div>
+            <div class="overview-card-icon">
+              <i class="fa-solid fa-compass-drafting"></i>
+            </div>
+            <h3 class="overview-card-title">Servicios Técnicos</h3>
+            <p class="overview-card-desc">
+              Instalación de programas de diseño y 3D (AutoCAD, Revit, 3ds Max, Photoshop), mantenimiento térmico y soporte remoto.
+            </p>
+          </div>
+          <a href="servicios.html" class="overview-card-link">
+            Explorar Servicios <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- Tarjeta 2: Venta de Productos -->
+        <div class="overview-card">
+          <div>
+            <div class="overview-card-icon">
+              <i class="fa-solid fa-microchip"></i>
+            </div>
+            <h3 class="overview-card-title">Venta de Productos</h3>
+            <p class="overview-card-desc">
+              Discos SSD M.2 (NVMe y SATA), memorias RAM DDR4/DDR5, pastas térmicas y componentes con garantía en Maracaibo.
+            </p>
+          </div>
+          <a href="productos.html" class="overview-card-link">
+            Ver Catálogo <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- Tarjeta 3: Tips Tech -->
+        <div class="overview-card">
+          <div>
+            <div class="overview-card-icon">
+              <i class="fa-solid fa-lightbulb"></i>
+            </div>
+            <h3 class="overview-card-title">Tips Tecnológicos</h3>
+            <p class="overview-card-desc">
+              Guía visual de medidas de SSD M.2 (2230, 2242, 2280), consejos térmicos para Maracaibo y recomendaciones de hardware.
+            </p>
+          </div>
+          <a href="tips.html" class="overview-card-link">
+            Leer Guías & Tips <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- Tarjeta 4: Agendar Citas & Ubicación -->
+        <div class="overview-card">
+          <div>
+            <div class="overview-card-icon">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <h3 class="overview-card-title">Citas & Ubicación</h3>
+            <p class="overview-card-desc">
+              Agenda tu visita en tienda o soporte a domicilio, y encuéntranos fácilmente en Av 5 de Julio con Calle 71 (Edif. Flamingo).
+            </p>
+          </div>
+          <a href="citas-ubicacion.html" class="overview-card-link">
+            Agendar y Ubicación <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         TICKER TECNOLÓGICO INFINITO
+         ========================================================================= -->
+    <div class="tech-ticker-wrap">
+      <div class="tech-ticker">
+        <span class="ticker-item"><i class="fa-solid fa-circle dot"></i> AUTODESK AUTOCAD</span>
+        <span class="ticker-item"><i class="fa-solid fa-circle dot"></i> 3DS MAX & REVIT</span>
+        <span class="ticker-item"><i class="fa-solid fa-circle dot"></i> SKETCHUP + V-RAY</span>
+        <span class="ticker-item"><i class="fa-solid fa-circle dot"></i> ADOBE SUITE CC</span>
+        <span class="ticker-item"><i class="fa-solid fa-circle dot"></i> CORELDRAW SUITE</span>
+        <span class="ticker-item"><i class="fa-solid fa-circle dot"></i> SSD M.2 NVMe PCIE</span>
+        <span class="ticker-item"><i class="fa-solid fa-circle dot"></i> MANTENIMIENTO TÉRMICO</span>
+        <span class="ticker-item"><i class="fa-solid fa-circle dot"></i> SOPORTE TÉCNICO: +58 4246402032</span>
+        <!-- Duplicado para loop continuo -->
+        <span class="ticker-item"><i class="fa-solid fa-circle dot"></i> AUTODESK AUTOCAD</span>
+        <span class="ticker-item"><i class="fa-solid fa-circle dot"></i> 3DS MAX & REVIT</span>
+        <span class="ticker-item"><i class="fa-solid fa-circle dot"></i> SKETCHUP + V-RAY</span>
+        <span class="ticker-item"><i class="fa-solid fa-circle dot"></i> ADOBE SUITE CC</span>
+        <span class="ticker-item"><i class="fa-solid fa-circle dot"></i> CORELDRAW SUITE</span>
+        <span class="ticker-item"><i class="fa-solid fa-circle dot"></i> SSD M.2 NVMe PCIE</span>
+        <span class="ticker-item"><i class="fa-solid fa-circle dot"></i> MANTENIMIENTO TÉRMICO</span>
+      </div>
+    </div>
+
+    <!-- =========================================================================
+         RESUMEN DE SERVICIOS DESTACADOS (CON ENLACE A SERVICIOS.HTML)
+         ========================================================================= -->
+    <section class="services-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="subtitle">Áreas de Especialidad</span>
+          <h2 class="title">Nuestros Servicios Principales</h2>
+          <p class="description">
+            Soluciones informáticas confiables para profesionales de la arquitectura, diseño, ingenieros, estudiantes y usuarios en general.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <!-- Card Resumen 1 -->
+          <div class="service-card">
+            <div>
+              <div class="service-icon-box">
+                <i class="fa-solid fa-compass-drafting"></i>
+              </div>
+              <h3 class="service-title">Software de Diseño & 3D</h3>
+              <p class="service-desc">
+                Instalación certificada y sin errores de suites como AutoCAD, Revit, 3ds Max, V-Ray, Adobe y CorelDRAW con optimización de hardware.
+              </p>
+            </div>
+            <div class="service-action">
+              <a href="servicios.html" class="btn btn-secondary" style="width:100%;">
+                Conocer Más Detalles
+              </a>
+            </div>
+          </div>
+
+          <!-- Card Resumen 2 -->
+          <div class="service-card">
+            <div>
+              <div class="service-icon-box">
+                <i class="fa-solid fa-temperature-arrow-down"></i>
+              </div>
+              <h3 class="service-title">Mantenimiento Térmico</h3>
+              <p class="service-desc">
+                Compuestos térmicos de alto rendimiento y limpieza interna profunda para proteger procesadores y chips gráficos del calor de Maracaibo.
+              </p>
+            </div>
+            <div class="service-action">
+              <a href="servicios.html" class="btn btn-secondary" style="width:100%;">
+                Conocer Más Detalles
+              </a>
+            </div>
+          </div>
+
+          <!-- Card Resumen 3 -->
+          <div class="service-card">
+            <div>
+              <div class="service-icon-box">
+                <i class="fa-solid fa-microchip"></i>
+              </div>
+              <h3 class="service-title">Actualización de Hardware</h3>
+              <p class="service-desc">
+                Clonación de discos mecánicos a unidades de estado sólido SSD M.2 y expansión de memoria RAM sin perder tus datos ni tus licencias.
+              </p>
+            </div>
+            <div class="service-action">
+              <a href="servicios.html" class="btn btn-secondary" style="width:100%;">
+                Conocer Más Detalles
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 10px;">
+          <a href="servicios.html" class="btn btn-primary">
+            <i class="fa-solid fa-list-check"></i> Ver Todos los Servicios Detallados
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         BANNER RESUMEN DE PRODUCTOS & HARDWARE (CON ENLACE A PRODUCTOS.HTML)
+         ========================================================================= -->
+    <section style="padding: 80px 0; background: var(--sp-bg-inner); border-top: 1px solid var(--sp-border); border-bottom: 1px solid var(--sp-border);">
+      <div class="container" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 30px;">
+        <div style="max-width: 650px;">
+          <span class="badge-tech"><i class="fa-solid fa-bag-shopping"></i> Tienda de Hardware</span>
+          <h2 style="font-size: 2.3rem; margin: 12px 0 10px; color: var(--sp-heading-color);">¿Buscando Discos SSD o Memorias RAM?</h2>
+          <p style="color: var(--sp-text-secondary); font-size: 1.05rem;">
+            Tenemos stock disponible de unidades SSD M.2 NVMe PCIe, M.2 SATA, memorias para laptop y desktop, y pastas térmicas originales con cotización directa por WhatsApp.
+          </p>
+        </div>
+        <div>
+          <a href="productos.html" class="btn btn-primary" style="padding: 16px 32px; font-size: 1.15rem;">
+            <i class="fa-solid fa-cart-shopping"></i> Ir al Catálogo de Productos
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         RESUMEN DE TIPS & GUÍAS (CON ENLACE A TIPS.HTML)
+         ========================================================================= -->
+    <section class="tips-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="subtitle">Aprende con Nosotros</span>
+          <h2 class="title">Tips Tecnológicos & Consejos Prácticos</h2>
+          <p class="description">
+            Descubre recomendaciones para cuidar tu computadora, entender las especificaciones y elegir siempre el componente indicado.
+          </p>
+        </div>
+
+        <div class="tips-grid">
+          <!-- Tip 1 -->
+          <article class="tip-card" onclick="window.location.href='tips.html'">
+            <div class="tip-meta">
+              <span class="tip-tag">Hardware / SSD</span>
+              <span class="tip-read-time"><i class="fa-regular fa-clock"></i> 3 min lectura</span>
+            </div>
+            <h3 class="tip-title">¿Cómo saber qué SSD M.2 es compatible con tu laptop? (NVMe vs SATA)</h3>
+            <p class="tip-excerpt">
+              Aprende a diferenciar las medidas y muescas M-Key y B+M Key antes de comprar para no perder tu dinero.
+            </p>
+            <span class="tip-read-more">
+              Ver Guía en Tips Tech <i class="fa-solid fa-arrow-right"></i>
+            </span>
+          </article>
+
+          <!-- Tip 2 -->
+          <article class="tip-card" onclick="window.location.href='tips.html'">
+            <div class="tip-meta">
+              <span class="tip-tag">Diseño & 3D</span>
+              <span class="tip-read-time"><i class="fa-regular fa-clock"></i> 4 min lectura</span>
+            </div>
+            <h3 class="tip-title">Requisitos para mover AutoCAD, Revit y 3ds Max sin que tu PC se congele</h3>
+            <p class="tip-excerpt">
+              Descubre qué componentes priorizar para renderizar y modelar fluidamente sin sobrecalentar el equipo.
+            </p>
+            <span class="tip-read-more">
+              Ver Guía en Tips Tech <i class="fa-solid fa-arrow-right"></i>
+            </span>
+          </article>
+
+          <!-- Tip 3 -->
+          <article class="tip-card" onclick="window.location.href='tips.html'">
+            <div class="tip-meta">
+              <span class="tip-tag">Mantenimiento</span>
+              <span class="tip-read-time"><i class="fa-regular fa-clock"></i> 3 min lectura</span>
+            </div>
+            <h3 class="tip-title">Mantenimiento Térmico en Maracaibo: El enemigo invisible de tu laptop</h3>
+            <p class="tip-excerpt">
+              En nuestra región el calor extremo degrada la pasta térmica rápidamente. Aprende a prevenir apagados.
+            </p>
+            <span class="tip-read-more">
+              Ver Guía en Tips Tech <i class="fa-solid fa-arrow-right"></i>
+            </span>
+          </article>
+        </div>
+
+        <div style="text-align: center; margin-top: 36px;">
+          <a href="tips.html" class="btn btn-secondary">
+            <i class="fa-solid fa-microchip"></i> Ver Guía Completa de Medidas de SSD M.2 & Tips
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         BANNER DE SOPORTE TÉCNICO Y ACCESO A UBICACIÓN
+         ========================================================================= -->
+    <section class="support-banner-section">
+      <div class="container support-box">
+        <span class="badge-tech"><i class="fa-solid fa-headset"></i> Atención Inmediata</span>
+        <h2 style="margin-top: 12px;">Contáctate con nuestro soporte técnico</h2>
+        <p>
+          ¿Deseas una cotización, necesitas agendar una cita o tienes dudas sobre tus equipos?
+        </p>
+        
+        <div>
+          <a href="tel:+584246402032" class="support-phone-badge">
+            <i class="fa-solid fa-phone-volume"></i> +58 4246402032
+          </a>
+        </div>
+
+        <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+          <a href="https://wa.me/584246402032?text=Hola%20Softproca!%20Necesito%20asistencia%20t%C3%A9cnica%20de%20un%20especialista." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="font-size: 1.15rem; padding: 14px 30px;">
+            <i class="fa-brands fa-whatsapp"></i> Chatear por WhatsApp Ahora
+          </a>
+          <a href="citas-ubicacion.html" class="btn btn-secondary" style="font-size: 1.15rem; padding: 14px 30px;">
+            <i class="fa-solid fa-location-dot"></i> Ver Ubicación & Agendar Cita
+          </a>
+        </div>
+
+        <div style="margin-top: 24px; font-family: var(--sp-font-head); font-size: 1.35rem; color: var(--sp-orange-light); font-weight: 700; letter-spacing: 1px;">
+          ¡SOMOS TU ALIADO TECNOLÓGICO!
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       FOOTER
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="assets/images/logo-banner.png" alt="SOFTPROCA Logo" style="height: 48px; width: auto; margin-bottom: 14px;">
+        <p>
+          En <strong>SOFTPROCA C.A.</strong> somos tu aliado tecnológico en Maracaibo. Proveemos soluciones en hardware de alta velocidad, soporte técnico profesional e instalación especializada de software para arquitectura, diseño gráfico e ingeniería.
+        </p>
+        <div style="font-family: var(--sp-font-mono); font-size: 0.85rem; color: var(--sp-orange);">
+          <i class="fa-solid fa-shield-halved"></i> Calidad, rapidez y garantía comprobada.
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Páginas</h4>
+        <ul class="footer-links">
+          <li><a href="index.html"><i class="fa-solid fa-angle-right"></i> Inicio</a></li>
+          <li><a href="servicios.html"><i class="fa-solid fa-angle-right"></i> Servicios Técnicos</a></li>
+          <li><a href="productos.html"><i class="fa-solid fa-angle-right"></i> Venta de Productos</a></li>
+          <li><a href="tips.html"><i class="fa-solid fa-angle-right"></i> Tips & Guía SSD M.2</a></li>
+          <li><a href="citas-ubicacion.html"><i class="fa-solid fa-angle-right"></i> Agendar Cita & Ubicación</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Servicios Top</h4>
+        <ul class="footer-links">
+          <li><a href="servicios.html"><i class="fa-solid fa-angle-right"></i> Programas de Diseño 3D</a></li>
+          <li><a href="servicios.html"><i class="fa-solid fa-angle-right"></i> Autodesk AutoCAD & Revit</a></li>
+          <li><a href="servicios.html"><i class="fa-solid fa-angle-right"></i> Mantenimiento Térmico</a></li>
+          <li><a href="productos.html"><i class="fa-solid fa-angle-right"></i> Discos SSD M.2 NVMe</a></li>
+          <li><a href="citas-ubicacion.html"><i class="fa-solid fa-angle-right"></i> Agendar Cita Técnica</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contacto & Ubicación</h4>
+        <div style="font-size: 0.9rem; line-height: 1.7;">
+          <p><strong style="color:#FFF;">Dirección:</strong> Av 5 de Julio con Calle 71. Edif. Flamingo, P/B. Diagonal a la E/S Los Almendros. Maracaibo, Zulia.</p>
+          <p style="margin-top: 8px;"><strong style="color:#FFF;">Teléfono / WhatsApp:</strong> <br><a href="tel:+584246402032" style="color: var(--sp-orange); font-weight: bold;">+58 4246402032</a></p>
+          <p style="margin-top: 8px;"><strong style="color:#FFF;">Atención:</strong> Lunes a Sábado</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <div>
+        &copy; 2026 SOFTPROCA (Softpro C.A.) - Todos los derechos reservados.
+      </div>
+      <div style="color: var(--sp-orange-light); font-weight: 600;">
+        ¡Somos tu aliado tecnológico!
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       DRAWER LATERAL: COTIZADOR / CARRITO DE PRODUCTOS
+       ========================================================================= -->
+  <div class="cart-drawer-overlay" id="cart-drawer-overlay"></div>
+  <aside class="cart-drawer" id="cart-drawer">
+    <div class="cart-drawer-header">
+      <h3 class="cart-drawer-title">
+        <i class="fa-solid fa-receipt" style="color: var(--sp-orange);"></i> Tu Lista de Cotización
+      </h3>
+      <button class="cart-drawer-close" id="cart-close-btn" aria-label="Cerrar Cotizador">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <div class="cart-drawer-items" id="cart-items-container"></div>
+
+    <div class="cart-drawer-footer">
+      <div class="cart-total-row">
+        <span>Total Estimado:</span>
+        <span id="cart-total-amount" style="color: var(--sp-orange);">$0.00</span>
+      </div>
+      <button class="btn btn-whatsapp" id="btn-checkout-wa" style="width: 100%;" disabled>
+        <i class="fa-brands fa-whatsapp"></i> Enviar Cotización a WhatsApp (+58 4246402032)
+      </button>
+      <small style="display: block; text-align: center; color: var(--sp-text-muted); margin-top: 10px; font-size: 0.78rem;">
+        Precios referenciales en USD. Te responderemos al instante con la cotización formal y disponibilidad en tienda.
+      </small>
+    </div>
+  </aside>
+
+  <!-- =========================================================================
+       MODAL GENERAL (LIGHTBOX DE FLYERS Y DETALLES)
+       ========================================================================= -->
+  <div class="modal-overlay" id="general-modal-overlay">
+    <div class="modal-content-box">
+      <button class="modal-close-btn" id="general-modal-close" aria-label="Cerrar Ventana">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <h3 id="general-modal-title" style="font-size: 1.5rem; color: var(--sp-orange); margin-bottom: 16px;">Detalle</h3>
+      <div id="general-modal-body"></div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       WIDGET FLOTANTE DE WHATSAPP
+       ========================================================================= -->
+  <div class="whatsapp-float-widget">
+    <div class="whatsapp-tooltip">
+      <i class="fa-solid fa-comments"></i> ¡Soporte en línea! +58 4246402032
+    </div>
+    <a href="https://wa.me/584246402032?text=Hola%20SOFTPROCA!%20%C2%A1Somos%20tu%20aliado%20tecnol%C3%B3gico!%20Deseo%20hacer%20una%20consulta." target="_blank" rel="noopener noreferrer" class="whatsapp-float-btn" aria-label="Contactar soporte por WhatsApp">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+  </div>
+
+  <!-- Script Principal -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

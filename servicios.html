@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Servicios Técnicos | SOFTPROCA - Instalación de Software & Soporte</title>
+  <meta name="description" content="Servicios de instalación de programas de diseño y arquitectura (AutoCAD, Revit, 3ds Max, Photoshop, V-Ray), mantenimiento térmico y soporte técnico en Maracaibo.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo-icon.svg">
+
+  <!-- Hojas de Estilo -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Detección Inmediata de Tema (Modo Claro Predeterminado de la Marca) -->
+  <script>
+    (function() {
+      try {
+        const savedTheme = localStorage.getItem('softproca-theme');
+        if (savedTheme === 'dark') {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- =========================================================================
+       TOP BAR INFORMATIVA
+       ========================================================================= -->
+  <aside class="topbar">
+    <div class="container topbar-content">
+      <div class="topbar-info">
+        <span><i class="fa-solid fa-location-dot" style="color: var(--sp-orange);"></i> Av 5 de Julio con Calle 71. Edif. Flamingo, Maracaibo</span>
+        <a href="tel:+584246402032"><i class="fa-solid fa-phone" style="color: var(--sp-orange);"></i> +58 424-6402032</a>
+        <span><i class="fa-regular fa-clock" style="color: var(--sp-orange);"></i> Lun - Sáb: 8:30 AM - 5:30 PM</span>
+      </div>
+      <div class="topbar-slogan">
+        <i class="fa-solid fa-bolt"></i> ¡Somos tu aliado tecnológico!
+      </div>
+    </div>
+  </aside>
+
+  <!-- =========================================================================
+       NAVBAR PRINCIPAL
+       ========================================================================= -->
+  <header>
+    <nav class="navbar" id="navbar">
+      <div class="container nav-container">
+        <!-- Logo de Marca -->
+        <a href="index.html" class="brand-logo" aria-label="Inicio SOFTPROCA">
+          <img src="assets/images/logo-banner.png" alt="SOFTPROCA Logo Oficial" onerror="this.src='assets/images/logo-sq.jpg'">
+        </a>
+
+        <!-- Menú de Navegación Multi-página -->
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Inicio</a></li>
+          <li><a href="servicios.html" class="nav-link active">Servicios</a></li>
+          <li><a href="productos.html" class="nav-link">Venta de Productos</a></li>
+          <li><a href="tips.html" class="nav-link">Tips Tech</a></li>
+          <li><a href="citas-ubicacion.html" class="nav-link">Citas & Ubicación</a></li>
+        </ul>
+
+        <!-- Acciones: Tema, Cotizar y WhatsApp -->
+        <div class="nav-actions">
+          <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Cambiar tema claro u oscuro" title="Cambiar tema">
+            <i class="fa-solid fa-moon theme-icon" id="theme-icon"></i>
+            <span class="theme-toggle-text" id="theme-text">Modo Oscuro</span>
+          </button>
+
+          <button class="cart-toggle-btn" id="cart-toggle-btn" aria-label="Ver Cotización">
+            <i class="fa-solid fa-receipt"></i>
+            <span>Cotizar</span>
+            <span class="cart-badge-count" id="cart-badge">0</span>
+          </button>
+
+          <a href="https://wa.me/584246402032?text=Hola%20SOFTPROCA!%20Deseo%20consultar%20sobre%20sus%20servicios%20t%C3%A9cnicos." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm">
+            <i class="fa-brands fa-whatsapp"></i> Soporte
+          </a>
+
+          <button class="mobile-toggle" aria-label="Abrir Menú">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- =========================================================================
+         BANNER DE PÁGINA: SERVICIOS
+         ========================================================================= -->
+    <section class="page-header-banner">
+      <div class="container">
+        <nav class="breadcrumb-nav">
+          <a href="index.html">Inicio</a> / <span>Servicios</span>
+        </nav>
+        <span class="badge-tech"><i class="fa-solid fa-screwdriver-wrench"></i> Soporte Calificado</span>
+        <h1 class="page-title">Servicios Técnicos Especializados</h1>
+        <p class="page-subtitle">
+          Instalación profesional de programas de arquitectura, diseño gráfico e ingeniería, mantenimiento térmico para prolongar la vida útil de tus equipos y actualizaciones de hardware garantizadas.
+        </p>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         LISTA DETALLADA DE SERVICIOS
+         ========================================================================= -->
+    <section class="services-section" style="padding-top: 60px;">
+      <div class="container">
+        
+        <!-- Showcase del Flyer de Software de Diseño -->
+        <div class="software-banner-box" style="margin-bottom: 70px;">
+          <div class="software-banner-content">
+            <span class="badge-tech"><i class="fa-solid fa-star"></i> Especialistas Destacados</span>
+            <h3 style="margin-top: 14px;">Instalación de Programas de Diseño Gráfico & Arquitectura</h3>
+            <p>
+              En <strong>SOFTPROCA</strong> somos especialistas en dejar tu equipo listo para trabajar en renderizado, planos 2D/3D y diseño vectorial sin problemas de activación ni caídas de sistema.
+            </p>
+
+            <div class="software-tags-list">
+              <span class="soft-pill autodesk"><i class="fa-solid fa-cube"></i> Autodesk AutoCAD</span>
+              <span class="soft-pill autodesk"><i class="fa-solid fa-cube"></i> Autodesk 3ds Max</span>
+              <span class="soft-pill autodesk"><i class="fa-solid fa-cube"></i> Autodesk Revit</span>
+              <span class="soft-pill sketchup"><i class="fa-solid fa-shapes"></i> SketchUp Pro</span>
+              <span class="soft-pill vray"><i class="fa-solid fa-sun"></i> Chaos V-Ray</span>
+              <span class="soft-pill adobe"><i class="fa-solid fa-pen-nib"></i> Adobe Photoshop CC</span>
+              <span class="soft-pill adobe"><i class="fa-solid fa-bezier-curve"></i> Adobe Illustrator CC</span>
+              <span class="soft-pill adobe"><i class="fa-solid fa-book-open"></i> Adobe InDesign CC</span>
+              <span class="soft-pill corel"><i class="fa-solid fa-palette"></i> CorelDRAW Suite</span>
+            </div>
+
+            <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+              <a href="citas-ubicacion.html" class="btn btn-primary">
+                <i class="fa-regular fa-calendar-check"></i> Agendar Instalación
+              </a>
+              <a href="https://wa.me/584246402032?text=Hola%20Softproca!%20Me%20interesa%20la%20instalaci%C3%B3n%20de%20programas%20de%20dise%C3%B1o." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
+                <i class="fa-brands fa-whatsapp"></i> Consultar Disponibilidad
+              </a>
+            </div>
+          </div>
+
+          <div class="software-banner-img" data-zoom-img="assets/images/flyer-software.jpg" data-img-title="Especialistas en Instalación de Programas de Diseño - SOFTPROCA">
+            <img src="assets/images/flyer-software.jpg" alt="Flyer Software de Diseño Gráfico Softproca">
+            <div class="image-zoom-overlay">
+              <i class="fa-solid fa-magnifying-glass-plus"></i> Ampliar Flyer
+            </div>
+          </div>
+        </div>
+
+        <!-- Grilla de Servicios Completos -->
+        <div class="services-grid">
+          
+          <!-- Servicio 1: Mantenimiento Térmico -->
+          <div class="service-card">
+            <div>
+              <div class="service-icon-box">
+                <i class="fa-solid fa-temperature-arrow-down"></i>
+              </div>
+              <h3 class="service-title">Mantenimiento Térmico & Limpieza Profunda</h3>
+              <p class="service-desc">
+                Diseñado específicamente para contrarrestar el impacto del calor extremo de Maracaibo en laptops y PCs de escritorio.
+              </p>
+              <ul class="service-features-list">
+                <li><i class="fa-solid fa-circle-check"></i> Aplicación de pasta térmica de alto rendimiento con partículas microcerámicas.</li>
+                <li><i class="fa-solid fa-circle-check"></i> Desensamble completo y limpieza ultrasónica de turbinas y radiadores.</li>
+                <li><i class="fa-solid fa-circle-check"></i> Lubricación de ventiladores y verificación de flujo de aire.</li>
+                <li><i class="fa-solid fa-circle-check"></i> Reducción de temperaturas de hasta 15°C evitando el Thermal Throttling.</li>
+              </ul>
+            </div>
+            <div class="service-action">
+              <a href="citas-ubicacion.html" class="btn btn-secondary" style="width:100%;">
+                <i class="fa-regular fa-calendar"></i> Agendar Mantenimiento
+              </a>
+            </div>
+          </div>
+
+          <!-- Servicio 2: Upgrade SSD & Clonación -->
+          <div class="service-card">
+            <div>
+              <div class="service-icon-box">
+                <i class="fa-solid fa-hard-drive"></i>
+              </div>
+              <h3 class="service-title">Actualización a SSD & Expansión de RAM</h3>
+              <p class="service-desc">
+                Transforma el rendimiento de tu computadora haciéndola hasta 10 veces más rápida sin perder ninguno de tus archivos.
+              </p>
+              <ul class="service-features-list">
+                <li><i class="fa-solid fa-circle-check"></i> <strong>Clonación bit a bit:</strong> Conserva tu Windows, configuraciones y licencias exactamente iguales.</li>
+                <li><i class="fa-solid fa-circle-check"></i> Instalación de discos SSD M.2 NVMe PCIe y SSD 2.5" SATA.</li>
+                <li><i class="fa-solid fa-circle-check"></i> Ampliación de memoria RAM DDR4 y DDR5 para renders y multitarea fluida.</li>
+                <li><i class="fa-solid fa-circle-check"></i> Instalación de adaptadores Caddy para conservar el disco original como secundario.</li>
+              </ul>
+            </div>
+            <div class="service-action">
+              <a href="productos.html" class="btn btn-secondary" style="width:100%;">
+                <i class="fa-solid fa-bag-shopping"></i> Ver Discos y Memorias
+              </a>
+            </div>
+          </div>
+
+          <!-- Servicio 3: Soporte Remoto & Asesoría -->
+          <div class="service-card">
+            <div>
+              <div class="service-icon-box">
+                <i class="fa-solid fa-network-wired"></i>
+              </div>
+              <h3 class="service-title">Soporte Técnico Remoto (AnyDesk / TeamViewer)</h3>
+              <p class="service-desc">
+                Soluciona problemas de software, errores de activación o configuración técnica sin moverte de tu casa u oficina.
+              </p>
+              <ul class="service-features-list">
+                <li><i class="fa-solid fa-circle-check"></i> Conexión encriptada y 100% segura supervisada en tiempo real por el cliente.</li>
+                <li><i class="fa-solid fa-circle-check"></i> Instalación y configuración remota de software especializado.</li>
+                <li><i class="fa-solid fa-circle-check"></i> Eliminación de virus, malware y aceleración del arranque de Windows.</li>
+                <li><i class="fa-solid fa-circle-check"></i> Atención inmediata disponible para toda Venezuela.</li>
+              </ul>
+            </div>
+            <div class="service-action">
+              <a href="https://wa.me/584246402032?text=Hola%20Softproca!%20Necesito%20asistencia%20t%C3%A9cnica%20remota%20por%20AnyDesk." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="width:100%;">
+                <i class="fa-brands fa-whatsapp"></i> Pedir Soporte Remoto
+              </a>
+            </div>
+          </div>
+
+          <!-- Servicio 4: Diagnóstico y Reparación -->
+          <div class="service-card">
+            <div>
+              <div class="service-icon-box">
+                <i class="fa-solid fa-microchip"></i>
+              </div>
+              <h3 class="service-title">Diagnóstico & Reparación de PCs y Laptops</h3>
+              <p class="service-desc">
+                Evaluación técnica rigurosa de fallas electrónicas, pantallas, teclados, fuentes de poder y tarjetas madres.
+              </p>
+              <ul class="service-features-list">
+                <li><i class="fa-solid fa-circle-check"></i> Reparación de equipos que no dan imagen, se apagan o se reinician.</li>
+                <li><i class="fa-solid fa-circle-check"></i> Reemplazo de pantallas, bisagras rotas y teclados de laptop.</li>
+                <li><i class="fa-solid fa-circle-check"></i> Mantenimiento y armado personalizado de PCs de trabajo y render.</li>
+                <li><i class="fa-solid fa-circle-check"></i> Presupuesto transparente antes de realizar cualquier intervención.</li>
+              </ul>
+            </div>
+            <div class="service-action">
+              <a href="citas-ubicacion.html" class="btn btn-secondary" style="width:100%;">
+                <i class="fa-solid fa-location-dot"></i> Llevar a Revisión
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Banner de Contacto Técnico -->
+        <div style="background: var(--sp-bg-card); border: 1px solid var(--sp-border); border-radius: var(--sp-radius-xl); padding: 40px; text-align: center; margin-top: 20px; box-shadow: var(--sp-shadow-card);">
+          <h3 style="font-size: 2rem; margin-bottom: 10px;">¿Tienes una consulta específica o un equipo empresarial?</h3>
+          <p style="color: var(--sp-text-secondary); max-width: 600px; margin: 0 auto 24px;">
+            Atendemos también despachos a oficinas de arquitectura, ingenierías y estudios creativos en Maracaibo.
+          </p>
+          <a href="https://wa.me/584246402032?text=Hola%20Softproca!%20Quisiera%20cotizar%20un%20servicio%20para%20mis%20equipos." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="font-size: 1.1rem;">
+            <i class="fa-brands fa-whatsapp"></i> Hablar con Soporte al +58 4246402032
+          </a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       FOOTER
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="assets/images/logo-banner.png" alt="SOFTPROCA Logo" style="height: 48px; width: auto; margin-bottom: 14px;">
+        <p>
+          En <strong>SOFTPROCA C.A.</strong> somos tu aliado tecnológico en Maracaibo. Proveemos soluciones en hardware de alta velocidad, soporte técnico profesional e instalación especializada de software para arquitectura, diseño gráfico e ingeniería.
+        </p>
+        <div style="font-family: var(--sp-font-mono); font-size: 0.85rem; color: var(--sp-orange);">
+          <i class="fa-solid fa-shield-halved"></i> Calidad, rapidez y garantía comprobada.
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Páginas</h4>
+        <ul class="footer-links">
+          <li><a href="index.html"><i class="fa-solid fa-angle-right"></i> Inicio</a></li>
+          <li><a href="servicios.html"><i class="fa-solid fa-angle-right"></i> Servicios Técnicos</a></li>
+          <li><a href="productos.html"><i class="fa-solid fa-angle-right"></i> Venta de Productos</a></li>
+          <li><a href="tips.html"><i class="fa-solid fa-angle-right"></i> Tips & Guía SSD M.2</a></li>
+          <li><a href="citas-ubicacion.html"><i class="fa-solid fa-angle-right"></i> Agendar Cita & Ubicación</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Servicios Top</h4>
+        <ul class="footer-links">
+          <li><a href="servicios.html"><i class="fa-solid fa-angle-right"></i> AutoCAD & Revit</a></li>
+          <li><a href="servicios.html"><i class="fa-solid fa-angle-right"></i> 3ds Max & V-Ray</a></li>
+          <li><a href="servicios.html"><i class="fa-solid fa-angle-right"></i> Adobe Suite CC</a></li>
+          <li><a href="servicios.html"><i class="fa-solid fa-angle-right"></i> Mantenimiento Térmico</a></li>
+          <li><a href="servicios.html"><i class="fa-solid fa-angle-right"></i> Clonación a SSD M.2</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contacto & Ubicación</h4>
+        <div style="font-size: 0.9rem; line-height: 1.7;">
+          <p><strong style="color:#FFF;">Dirección:</strong> Av 5 de Julio con Calle 71. Edif. Flamingo, P/B. Diagonal a la E/S Los Almendros. Maracaibo, Zulia.</p>
+          <p style="margin-top: 8px;"><strong style="color:#FFF;">Teléfono / WhatsApp:</strong> <br><a href="tel:+584246402032" style="color: var(--sp-orange); font-weight: bold;">+58 4246402032</a></p>
+          <p style="margin-top: 8px;"><strong style="color:#FFF;">Atención:</strong> Lunes a Sábado</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <div>
+        &copy; 2026 SOFTPROCA (Softpro C.A.) - Todos los derechos reservados.
+      </div>
+      <div style="color: var(--sp-orange-light); font-weight: 600;">
+        ¡Somos tu aliado tecnológico!
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       DRAWER LATERAL: COTIZADOR / CARRITO DE PRODUCTOS
+       ========================================================================= -->
+  <div class="cart-drawer-overlay" id="cart-drawer-overlay"></div>
+  <aside class="cart-drawer" id="cart-drawer">
+    <div class="cart-drawer-header">
+      <h3 class="cart-drawer-title">
+        <i class="fa-solid fa-receipt" style="color: var(--sp-orange);"></i> Tu Lista de Cotización
+      </h3>
+      <button class="cart-drawer-close" id="cart-close-btn" aria-label="Cerrar Cotizador">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <div class="cart-drawer-items" id="cart-items-container"></div>
+
+    <div class="cart-drawer-footer">
+      <div class="cart-total-row">
+        <span>Total Estimado:</span>
+        <span id="cart-total-amount" style="color: var(--sp-orange);">$0.00</span>
+      </div>
+      <button class="btn btn-whatsapp" id="btn-checkout-wa" style="width: 100%;" disabled>
+        <i class="fa-brands fa-whatsapp"></i> Enviar Cotización a WhatsApp (+58 4246402032)
+      </button>
+      <small style="display: block; text-align: center; color: var(--sp-text-muted); margin-top: 10px; font-size: 0.78rem;">
+        Precios referenciales en USD. Te responderemos al instante con la cotización formal y disponibilidad en tienda.
+      </small>
+    </div>
+  </aside>
+
+  <!-- =========================================================================
+       MODAL GENERAL (LIGHTBOX DE FLYERS Y DETALLES)
+       ========================================================================= -->
+  <div class="modal-overlay" id="general-modal-overlay">
+    <div class="modal-content-box">
+      <button class="modal-close-btn" id="general-modal-close" aria-label="Cerrar Ventana">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <h3 id="general-modal-title" style="font-size: 1.5rem; color: var(--sp-orange); margin-bottom: 16px;">Detalle</h3>
+      <div id="general-modal-body"></div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       WIDGET FLOTANTE DE WHATSAPP
+       ========================================================================= -->
+  <div class="whatsapp-float-widget">
+    <div class="whatsapp-tooltip">
+      <i class="fa-solid fa-comments"></i> ¡Soporte en línea! +58 4246402032
+    </div>
+    <a href="https://wa.me/584246402032?text=Hola%20SOFTPROCA!%20%C2%A1Somos%20tu%20aliado%20tecnol%C3%B3gico!%20Deseo%20hacer%20una%20consulta." target="_blank" rel="noopener noreferrer" class="whatsapp-float-btn" aria-label="Contactar soporte por WhatsApp">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+  </div>
+
+  <!-- Script Principal -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agendar Cita & Ubicación | SOFTPROCA - Maracaibo</title>
+  <meta name="description" content="Agenda tu cita técnica o llamada con SOFTPROCA. Visítanos en Av. 5 de Julio con Calle 71, Edif. Flamingo, P/B, Maracaibo, Estado Zulia. Diagonal a la E/S Los Almendros.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo-icon.svg">
+
+  <!-- Hojas de Estilo -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Leaflet CSS para Mapa Interactivo -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+  <!-- Detección Inmediata de Tema (Modo Claro Predeterminado de la Marca) -->
+  <script>
+    (function() {
+      try {
+        const savedTheme = localStorage.getItem('softproca-theme');
+        if (savedTheme === 'dark') {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- =========================================================================
+       TOP BAR INFORMATIVA
+       ========================================================================= -->
+  <aside class="topbar">
+    <div class="container topbar-content">
+      <div class="topbar-info">
+        <span><i class="fa-solid fa-location-dot" style="color: var(--sp-orange);"></i> Av 5 de Julio con Calle 71. Edif. Flamingo, Maracaibo</span>
+        <a href="tel:+584246402032"><i class="fa-solid fa-phone" style="color: var(--sp-orange);"></i> +58 424-6402032</a>
+        <span><i class="fa-regular fa-clock" style="color: var(--sp-orange);"></i> Lun - Sáb: 8:30 AM - 5:30 PM</span>
+      </div>
+      <div class="topbar-slogan">
+        <i class="fa-solid fa-bolt"></i> ¡Somos tu aliado tecnológico!
+      </div>
+    </div>
+  </aside>
+
+  <!-- =========================================================================
+       NAVBAR PRINCIPAL
+       ========================================================================= -->
+  <header>
+    <nav class="navbar" id="navbar">
+      <div class="container nav-container">
+        <!-- Logo de Marca -->
+        <a href="index.html" class="brand-logo" aria-label="Inicio SOFTPROCA">
+          <img src="assets/images/logo-banner.png" alt="SOFTPROCA Logo Oficial" onerror="this.src='assets/images/logo-sq.jpg'">
+        </a>
+
+        <!-- Menú de Navegación Multi-página -->
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Inicio</a></li>
+          <li><a href="servicios.html" class="nav-link">Servicios</a></li>
+          <li><a href="productos.html" class="nav-link">Venta de Productos</a></li>
+          <li><a href="tips.html" class="nav-link">Tips Tech</a></li>
+          <li><a href="citas-ubicacion.html" class="nav-link active">Citas & Ubicación</a></li>
+        </ul>
+
+        <!-- Acciones: Tema, Cotizar y WhatsApp -->
+        <div class="nav-actions">
+          <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Cambiar tema claro u oscuro" title="Cambiar tema">
+            <i class="fa-solid fa-moon theme-icon" id="theme-icon"></i>
+            <span class="theme-toggle-text" id="theme-text">Modo Oscuro</span>
+          </button>
+
+          <button class="cart-toggle-btn" id="cart-toggle-btn" aria-label="Ver Cotización">
+            <i class="fa-solid fa-receipt"></i>
+            <span>Cotizar</span>
+            <span class="cart-badge-count" id="cart-badge">0</span>
+          </button>
+
+          <a href="https://wa.me/584246402032?text=Hola%20SOFTPROCA!%20Deseo%20coordinar%20una%20visita%20o%20cita." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm">
+            <i class="fa-brands fa-whatsapp"></i> Soporte
+          </a>
+
+          <button class="mobile-toggle" aria-label="Abrir Menú">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- =========================================================================
+         BANNER DE PÁGINA: CITAS & UBICACIÓN
+         ========================================================================= -->
+    <section class="page-header-banner">
+      <div class="container">
+        <nav class="breadcrumb-nav">
+          <a href="index.html">Inicio</a> / <span>Citas & Ubicación</span>
+        </nav>
+        <span class="badge-tech"><i class="fa-solid fa-location-crosshairs"></i> Atención Personalizada</span>
+        <h1 class="page-title">Agendar Cita & Nuestra Ubicación</h1>
+        <p class="page-subtitle">
+          Programa tu cita técnica presencial en nuestra sede de Maracaibo, solicita soporte a domicilio o conéctate con nosotros en línea.
+        </p>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECCIÓN AGENDAMIENTO DE CITAS O LLAMADAS (SISTEMA INTERACTIVO)
+         ========================================================================= -->
+    <section class="booking-section" style="padding-top: 60px;">
+      <div class="container">
+        <div class="booking-wrapper">
+          <div class="booking-header">
+            <span class="badge-tech"><i class="fa-solid fa-calendar-check"></i> Citas Técnicas & Llamadas</span>
+            <h2 style="font-size: 2.3rem; margin: 12px 0 8px;">Agenda tu Atención Técnica</h2>
+            <p style="color: var(--sp-text-secondary); max-width: 620px; margin: 0 auto;">
+              Elige cómo y cuándo deseas ser atendido. Al completar los datos, se generará tu ticket oficial para confirmarlo inmediatamente por WhatsApp.
+            </p>
+          </div>
+
+          <form class="booking-form" id="booking-form">
+            <!-- 1. Modalidad -->
+            <div>
+              <div class="form-group-title">
+                <i class="fa-solid fa-layer-group"></i> 1. Selecciona la Modalidad
+              </div>
+              <div class="modality-options-grid">
+                <div class="modality-card selected" data-modality="Presencial en Tienda (Edif. Flamingo)">
+                  <i class="fa-solid fa-shop"></i>
+                  <span>En Tienda</span>
+                  <small>Edif. Flamingo</small>
+                </div>
+                <div class="modality-card" data-modality="Servicio a Domicilio (Maracaibo)">
+                  <i class="fa-solid fa-house-laptop"></i>
+                  <span>A Domicilio</span>
+                  <small>Área de Maracaibo</small>
+                </div>
+                <div class="modality-card" data-modality="Soporte Remoto (AnyDesk / Online)">
+                  <i class="fa-solid fa-network-wired"></i>
+                  <span>Remoto Online</span>
+                  <small>Vía AnyDesk</small>
+                </div>
+                <div class="modality-card" data-modality="Llamada Telefónica de Asesoría">
+                  <i class="fa-solid fa-phone-volume"></i>
+                  <span>Llamada</span>
+                  <small>Asesoría Directa</small>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2. Servicio & Horario -->
+            <div>
+              <div class="form-group-title">
+                <i class="fa-solid fa-screwdriver-wrench"></i> 2. Detalles del Servicio y Fecha
+              </div>
+              <div class="form-fields-row">
+                <div class="form-field">
+                  <label for="booking-service">Servicio Requerido *</label>
+                  <select id="booking-service" class="form-select">
+                    <option value="Instalación de Programas de Diseño (AutoCAD, Revit, Adobe, etc.)">Instalación de Software de Diseño (AutoCAD, Revit, etc.)</option>
+                    <option value="Instalación / Upgrade de Disco SSD M.2 con Clonación">Instalación / Upgrade de Disco SSD M.2 con Clonación</option>
+                    <option value="Mantenimiento Preventivo y Cambio de Pasta Térmica">Mantenimiento Preventivo y Cambio de Pasta Térmica</option>
+                    <option value="Diagnóstico General y Reparación de PC / Laptop">Diagnóstico General y Reparación de PC / Laptop</option>
+                    <option value="Aumento de Memoria RAM">Aumento de Memoria RAM</option>
+                    <option value="Consulta Técnica y Presupuesto">Consulta Técnica y Presupuesto</option>
+                  </select>
+                </div>
+
+                <div class="form-field">
+                  <label for="booking-date">Fecha Preferida *</label>
+                  <input type="date" id="booking-date" class="form-input" required>
+                </div>
+              </div>
+
+              <div class="form-fields-row" style="margin-top: 16px;">
+                <div class="form-field">
+                  <label for="booking-time">Turno / Horario *</label>
+                  <select id="booking-time" class="form-select">
+                    <option value="Turno Mañana (8:30 AM - 12:30 PM)">Turno Mañana (8:30 AM - 12:30 PM)</option>
+                    <option value="Turno Tarde (1:30 PM - 5:30 PM)">Turno Tarde (1:30 PM - 5:30 PM)</option>
+                    <option value="Sábado en la Mañana (9:00 AM - 1:00 PM)">Sábado en la Mañana (9:00 AM - 1:00 PM)</option>
+                  </select>
+                </div>
+
+                <div class="form-field">
+                  <label for="booking-phone">Tu Teléfono / WhatsApp *</label>
+                  <input type="tel" id="booking-phone" class="form-input" placeholder="Ej: 04141234567 o +58 424..." required>
+                </div>
+              </div>
+            </div>
+
+            <!-- 3. Datos del Cliente -->
+            <div>
+              <div class="form-group-title">
+                <i class="fa-solid fa-user-shield"></i> 3. Tus Datos y Equipo
+              </div>
+              <div class="form-fields-row">
+                <div class="form-field">
+                  <label for="booking-name">Nombre y Apellido *</label>
+                  <input type="text" id="booking-name" class="form-input" placeholder="Tu nombre completo" required>
+                </div>
+
+                <div class="form-field">
+                  <label for="booking-details">Modelo de Laptop/PC o Detalle Adicional</label>
+                  <input type="text" id="booking-details" class="form-input" placeholder="Ej: Laptop HP Pavilion i5, o PC Gamer con Windows 11">
+                </div>
+              </div>
+            </div>
+
+            <!-- Resumen en vivo de la Cita -->
+            <div class="appointment-summary-box">
+              <div class="appointment-summary-title">
+                <i class="fa-solid fa-ticket" style="color: var(--sp-orange);"></i> Vista Previa de tu Ticket de Atención
+              </div>
+              <div class="appointment-summary-text" id="booking-summary-text">
+                Completa tus datos para previsualizar y confirmar tu cita técnica.
+              </div>
+            </div>
+
+            <!-- Botón de Envío -->
+            <button type="button" id="btn-submit-booking" class="btn btn-primary" style="width: 100%; padding: 16px; font-size: 1.15rem;">
+              <i class="fa-brands fa-whatsapp"></i> Confirmar y Enviar Cita por WhatsApp (+58 4246402032)
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECCIÓN UBICACIÓN DETALLADA & MAPA
+         ========================================================================= -->
+    <section class="location-section" style="padding-top: 40px;">
+      <div class="container">
+        <div class="section-header">
+          <span class="subtitle">Visítanos en Nuestra Sede</span>
+          <h2 class="title">Dirección & Croquis de Llegada</h2>
+          <p class="description">
+            Ubicados en una zona estratégica y segura en Maracaibo con fácil acceso vehicular y transporte.
+          </p>
+        </div>
+
+        <div class="location-grid">
+          <!-- Columna Info de Ubicación -->
+          <div class="location-info-card">
+            <span class="badge-tech"><i class="fa-solid fa-building"></i> Sede Oficial Softpro C.A.</span>
+
+            <div class="location-official-address">
+              <span class="label">Dirección Exacta</span>
+              <div class="address-text">
+                MCBO, EDO ZULIA, AV 5 DE JULIO CON CALLE 71. EDIF. FLAMINGO, P/B. Diagonal a la E/S.
+              </div>
+            </div>
+
+            <ul class="location-details-list">
+              <li>
+                <i class="fa-solid fa-map-pin"></i>
+                <div>
+                  <span class="loc-label">Puntos de Referencia Clave:</span>
+                  <span class="loc-val">Diagonal a la Estación de Servicio (E/S) Los Almendros, muy cerca de Domesa Indio Mara, DHL Express ServicePoint y Plaza de Las Madres.</span>
+                </div>
+              </li>
+              <li>
+                <i class="fa-solid fa-headset"></i>
+                <div>
+                  <span class="loc-label">Línea de Soporte Técnico:</span>
+                  <span class="loc-val"><strong>+58 4246402032</strong> (Llamadas directas y WhatsApp)</span>
+                </div>
+              </li>
+              <li>
+                <i class="fa-solid fa-door-open"></i>
+                <div>
+                  <span class="loc-label">Horario de Atención:</span>
+                  <span class="loc-val">Lunes a Viernes de 8:30 AM a 5:30 PM | Sábados de 9:00 AM a 2:00 PM</span>
+                </div>
+              </li>
+              <li>
+                <i class="fa-solid fa-shield-halved"></i>
+                <div>
+                  <span class="loc-label">Instalaciones:</span>
+                  <span class="loc-val">Planta baja (P/B), fácil estacionamiento y zona comercial tranquila.</span>
+                </div>
+              </li>
+            </ul>
+
+            <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+              <a href="https://www.google.com/maps/search/?api=1&query=Av+5+de+Julio+con+Calle+71+Edif+Flamingo+Maracaibo" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                <i class="fa-solid fa-diamond-turn-right"></i> Abrir en Google Maps
+              </a>
+              <a href="https://wa.me/584246402032?text=Hola%20Softproca!%20Estoy%20yendo%20a%20su%20tienda%20y%20deseo%20confirmar%20la%20ubicaci%C3%B3n." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm">
+                <i class="fa-brands fa-whatsapp"></i> Pedir Ubicación por WhatsApp
+              </a>
+            </div>
+
+            <!-- Miniatura del flyer de mapa con zoom -->
+            <div class="flyer-location-embed" data-zoom-img="assets/images/flyer-location.jpg" data-img-title="Ubicación Detallada Softpro C.A. - Maracaibo">
+              <img src="assets/images/flyer-location.jpg" alt="Croquis y Ubicación Softpro C.A. Edif Flamingo Maracaibo">
+              <div class="image-zoom-overlay">
+                <i class="fa-solid fa-magnifying-glass-plus"></i> Clic para ver Croquis y Código QR
+              </div>
+            </div>
+          </div>
+
+          <!-- Columna Mapa Interactivo -->
+          <div class="map-visual-box">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+              <h4 style="font-size: 1.15rem; color: var(--sp-heading-color);"><i class="fa-solid fa-earth-americas" style="color: var(--sp-orange);"></i> Mapa Satelital / Callejero</h4>
+              <span style="font-size: 0.8rem; color: var(--sp-text-muted); font-family: var(--sp-font-mono);">GPS: 10.6698° N, 71.6285° W</span>
+            </div>
+            
+            <div id="map-container">
+              <iframe width="425" height="350" src="https://www.openstreetmap.org/export/embed?bbox=-71.63066089153291%2C10.662772031867929%2C-71.62815034389497%2C10.664804300834533&amp;layer=mapnik" style="border: 1px solid black"></iframe><br/><small><a href="https://www.openstreetmap.org/#map=19/10.663788/-71.629406">Ver el mapa más grande</a></small>
+            </div>
+
+            <div style="margin-top: 16px; background: var(--sp-bg-inner); border: 1px solid var(--sp-border); border-radius: 8px; padding: 14px; font-size: 0.88rem; color: var(--sp-text-secondary);">
+              <i class="fa-solid fa-circle-info" style="color: var(--sp-orange);"></i> <strong>Indicaciones de llegada:</strong> Viniendo por la Av. 5 de Julio cruza hacia Calle 71 a nivel del Edificio Flamingo (Planta Baja), exactamente diagonal a la estación de gasolina Los Almendros.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       FOOTER
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="assets/images/logo-banner.png" alt="SOFTPROCA Logo" style="height: 48px; width: auto; margin-bottom: 14px;">
+        <p>
+          En <strong>SOFTPROCA C.A.</strong> somos tu aliado tecnológico en Maracaibo. Proveemos soluciones en hardware de alta velocidad, soporte técnico profesional e instalación especializada de software para arquitectura, diseño gráfico e ingeniería.
+        </p>
+        <div style="font-family: var(--sp-font-mono); font-size: 0.85rem; color: var(--sp-orange);">
+          <i class="fa-solid fa-shield-halved"></i> Calidad, rapidez y garantía comprobada.
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Páginas</h4>
+        <ul class="footer-links">
+          <li><a href="index.html"><i class="fa-solid fa-angle-right"></i> Inicio</a></li>
+          <li><a href="servicios.html"><i class="fa-solid fa-angle-right"></i> Servicios Técnicos</a></li>
+          <li><a href="productos.html"><i class="fa-solid fa-angle-right"></i> Venta de Productos</a></li>
+          <li><a href="tips.html"><i class="fa-solid fa-angle-right"></i> Tips & Guía SSD M.2</a></li>
+          <li><a href="citas-ubicacion.html"><i class="fa-solid fa-angle-right"></i> Agendar Cita & Ubicación</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Servicios Top</h4>
+        <ul class="footer-links">
+          <li><a href="servicios.html"><i class="fa-solid fa-angle-right"></i> Software de Diseño</a></li>
+          <li><a href="servicios.html"><i class="fa-solid fa-angle-right"></i> Mantenimiento Térmico</a></li>
+          <li><a href="productos.html"><i class="fa-solid fa-angle-right"></i> Discos SSD M.2 NVMe</a></li>
+          <li><a href="tips.html"><i class="fa-solid fa-angle-right"></i> Guía Visual de Formatos</a></li>
+          <li><a href="citas-ubicacion.html"><i class="fa-solid fa-angle-right"></i> Agendar Cita</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contacto & Ubicación</h4>
+        <div style="font-size: 0.9rem; line-height: 1.7;">
+          <p><strong style="color:#FFF;">Dirección:</strong> Av 5 de Julio con Calle 71. Edif. Flamingo, P/B. Diagonal a la E/S Los Almendros. Maracaibo, Zulia.</p>
+          <p style="margin-top: 8px;"><strong style="color:#FFF;">Teléfono / WhatsApp:</strong> <br><a href="tel:+584246402032" style="color: var(--sp-orange); font-weight: bold;">+58 4246402032</a></p>
+          <p style="margin-top: 8px;"><strong style="color:#FFF;">Atención:</strong> Lunes a Sábado</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <div>
+        &copy; 2026 SOFTPROCA (Softpro C.A.) - Todos los derechos reservados.
+      </div>
+      <div style="color: var(--sp-orange-light); font-weight: 600;">
+        ¡Somos tu aliado tecnológico!
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       DRAWER LATERAL: COTIZADOR / CARRITO DE PRODUCTOS
+       ========================================================================= -->
+  <div class="cart-drawer-overlay" id="cart-drawer-overlay"></div>
+  <aside class="cart-drawer" id="cart-drawer">
+    <div class="cart-drawer-header">
+      <h3 class="cart-drawer-title">
+        <i class="fa-solid fa-receipt" style="color: var(--sp-orange);"></i> Tu Lista de Cotización
+      </h3>
+      <button class="cart-drawer-close" id="cart-close-btn" aria-label="Cerrar Cotizador">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <div class="cart-drawer-items" id="cart-items-container"></div>
+
+    <div class="cart-drawer-footer">
+      <div class="cart-total-row">
+        <span>Total Estimado:</span>
+        <span id="cart-total-amount" style="color: var(--sp-orange);">$0.00</span>
+      </div>
+      <button class="btn btn-whatsapp" id="btn-checkout-wa" style="width: 100%;" disabled>
+        <i class="fa-brands fa-whatsapp"></i> Enviar Cotización a WhatsApp (+58 4246402032)
+      </button>
+      <small style="display: block; text-align: center; color: var(--sp-text-muted); margin-top: 10px; font-size: 0.78rem;">
+        Precios referenciales en USD. Te responderemos al instante con la cotización formal y disponibilidad en tienda.
+      </small>
+    </div>
+  </aside>
+
+  <!-- =========================================================================
+       MODAL GENERAL (LIGHTBOX DE FLYERS Y DETALLES)
+       ========================================================================= -->
+  <div class="modal-overlay" id="general-modal-overlay">
+    <div class="modal-content-box">
+      <button class="modal-close-btn" id="general-modal-close" aria-label="Cerrar Ventana">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <h3 id="general-modal-title" style="font-size: 1.5rem; color: var(--sp-orange); margin-bottom: 16px;">Detalle</h3>
+      <div id="general-modal-body"></div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       WIDGET FLOTANTE DE WHATSAPP
+       ========================================================================= -->
+  <div class="whatsapp-float-widget">
+    <div class="whatsapp-tooltip">
+      <i class="fa-solid fa-comments"></i> ¡Soporte en línea! +58 4246402032
+    </div>
+    <a href="https://wa.me/584246402032?text=Hola%20SOFTPROCA!%20%C2%A1Somos%20tu%20aliado%20tecnol%C3%B3gico!%20Deseo%20hacer%20una%20consulta." target="_blank" rel="noopener noreferrer" class="whatsapp-float-btn" aria-label="Contactar soporte por WhatsApp">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+  </div>
+
+  <!-- Scripts: Leaflet.js & Main JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

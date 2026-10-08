@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 320" width="100%" height="100%">
+  <defs>
+    <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF6B00" />
+      <stop offset="100%" stop-color="#FF4500" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Outer Orbit Arcs -->
+  <path d="M 60 70 A 200 130 0 0 1 440 70" fill="none" stroke="url(#orangeGrad)" stroke-width="12" stroke-linecap="round"/>
+  <path d="M 60 210 A 200 130 0 0 0 440 210" fill="none" stroke="url(#orangeGrad)" stroke-width="12" stroke-linecap="round"/>
+
+  <!-- S Circuit Path (White) -->
+  <g fill="#FFFFFF">
+    <!-- Top terminal node of S -->
+    <circle cx="180" cy="98" r="9" />
+    <!-- S geometry with circuit traces -->
+    <path d="M 175 98 L 140 98 L 120 120 L 75 120 L 75 105 L 115 105 L 132 87 L 210 87 L 222 105 L 175 105 Z" />
+    <path d="M 75 120 L 75 160 L 195 160 L 215 178 L 260 178" fill="none" stroke="#FFFFFF" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="260" cy="178" r="9" fill="#FFFFFF"/>
+    <!-- Bottom part of S -->
+    <path d="M 125 180 L 80 220 L 160 220 L 235 155 L 180 155 Z" />
+    <path d="M 72 220 L 170 220 L 245 150 L 220 135 L 155 200 L 90 200 Z" />
+  </g>
+
+  <!-- P Circuit Path (Vibrant Orange) -->
+  <g fill="url(#orangeGrad)">
+    <!-- Main loop of P -->
+    <path d="M 215 87 L 370 87 C 420 87 430 115 430 145 C 430 175 420 205 365 205 L 235 205 C 220 215 205 220 185 220 L 225 220 C 245 220 260 215 270 205 L 365 205 C 410 205 445 180 445 145 C 445 105 410 87 365 87 Z" />
+    <!-- Core bar of P -->
+    <path d="M 205 87 L 360 87 C 400 87 410 110 410 145 C 410 175 395 185 360 185 L 260 185 L 260 145 L 360 145 C 380 145 385 135 385 145 C 385 125 375 117 350 117 L 215 117 Z" />
+    <!-- Node on P circuit -->
+    <circle cx="360" cy="145" r="10" />
+    <circle cx="360" cy="145" r="4" fill="#0d0e12" />
+  </g>
+
+  <!-- Brand Typography -->
+  <text x="250" y="275" font-family="'Rajdhani', 'Segoe UI', sans-serif" font-size="34" font-weight="700" letter-spacing="9" fill="#FFFFFF" text-anchor="middle">
+    SOFTPROCA
+  </text>
+  <text x="250" y="302" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="600" letter-spacing="4" fill="#FF6B00" text-anchor="middle">
+    TU ALIADO TECNOLÓGICO
+  </text>
+</svg>

@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tips Tecnológicos & Guía SSD M.2 | SOFTPROCA</title>
+  <meta name="description" content="Guías y tips técnicos de SOFTPROCA: Comparativa visual de modelos de discos SSD M.2 (2230, 2242, 2260, 2280, 22110), mantenimiento térmico y optimización de computadoras.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo-icon.svg">
+
+  <!-- Hojas de Estilo -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Detección Inmediata de Tema (Modo Claro Predeterminado de la Marca) -->
+  <script>
+    (function() {
+      try {
+        const savedTheme = localStorage.getItem('softproca-theme');
+        if (savedTheme === 'dark') {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- =========================================================================
+       TOP BAR INFORMATIVA
+       ========================================================================= -->
+  <aside class="topbar">
+    <div class="container topbar-content">
+      <div class="topbar-info">
+        <span><i class="fa-solid fa-location-dot" style="color: var(--sp-orange);"></i> Av 5 de Julio con Calle 71. Edif. Flamingo, Maracaibo</span>
+        <a href="tel:+584246402032"><i class="fa-solid fa-phone" style="color: var(--sp-orange);"></i> +58 424-6402032</a>
+        <span><i class="fa-regular fa-clock" style="color: var(--sp-orange);"></i> Lun - Sáb: 8:30 AM - 5:30 PM</span>
+      </div>
+      <div class="topbar-slogan">
+        <i class="fa-solid fa-bolt"></i> ¡Somos tu aliado tecnológico!
+      </div>
+    </div>
+  </aside>
+
+  <!-- =========================================================================
+       NAVBAR PRINCIPAL
+       ========================================================================= -->
+  <header>
+    <nav class="navbar" id="navbar">
+      <div class="container nav-container">
+        <!-- Logo de Marca -->
+        <a href="index.html" class="brand-logo" aria-label="Inicio SOFTPROCA">
+          <img src="assets/images/logo-banner.png" alt="SOFTPROCA Logo Oficial" onerror="this.src='assets/images/logo-sq.jpg'">
+        </a>
+
+        <!-- Menú de Navegación Multi-página -->
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Inicio</a></li>
+          <li><a href="servicios.html" class="nav-link">Servicios</a></li>
+          <li><a href="productos.html" class="nav-link">Venta de Productos</a></li>
+          <li><a href="tips.html" class="nav-link active">Tips Tech</a></li>
+          <li><a href="citas-ubicacion.html" class="nav-link">Citas & Ubicación</a></li>
+        </ul>
+
+        <!-- Acciones: Tema, Cotizar y WhatsApp -->
+        <div class="nav-actions">
+          <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Cambiar tema claro u oscuro" title="Cambiar tema">
+            <i class="fa-solid fa-moon theme-icon" id="theme-icon"></i>
+            <span class="theme-toggle-text" id="theme-text">Modo Oscuro</span>
+          </button>
+
+          <button class="cart-toggle-btn" id="cart-toggle-btn" aria-label="Ver Cotización">
+            <i class="fa-solid fa-receipt"></i>
+            <span>Cotizar</span>
+            <span class="cart-badge-count" id="cart-badge">0</span>
+          </button>
+
+          <a href="https://wa.me/584246402032?text=Hola%20SOFTPROCA!%20Tengo%20una%20consulta%20t%C3%A9cnica." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm">
+            <i class="fa-brands fa-whatsapp"></i> Soporte
+          </a>
+
+          <button class="mobile-toggle" aria-label="Abrir Menú">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- =========================================================================
+         BANNER DE PÁGINA: TIPS TECH
+         ========================================================================= -->
+    <section class="page-header-banner">
+      <div class="container">
+        <nav class="breadcrumb-nav">
+          <a href="index.html">Inicio</a> / <span>Tips Tech & Guías</span>
+        </nav>
+        <span class="badge-tech"><i class="fa-solid fa-lightbulb"></i> Base de Conocimiento</span>
+        <h1 class="page-title">Tips Tecnológicos & Asesoría</h1>
+        <p class="page-subtitle">
+          Guías prácticas, comparativas técnicas y consejos de nuestros expertos para que tomes las mejores decisiones al actualizar y proteger tu computadora.
+        </p>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         GUÍA VISUAL E INTERACTIVA DE DISCOS DUROS SSD M.2 (UBICADA AQUÍ EN TIPS)
+         ========================================================================= -->
+    <section class="tips-section" style="padding-top: 60px;">
+      <div class="container">
+        
+        <div class="ssd-guide-showcase">
+          <div class="ssd-guide-header">
+            <div>
+              <span class="badge-tech"><i class="fa-solid fa-microchip"></i> Guía Especial de Almacenamiento</span>
+              <h2 class="ssd-guide-title" style="margin-top: 8px;">
+                Guía Visual de Modelos de Discos Duros <span>SSD M.2 & mSATA</span>
+              </h2>
+              <p style="color: var(--sp-text-secondary); font-size: 0.95rem; margin-top: 6px;">
+                Conoce las medidas exactas en pulgadas y milímetros antes de comprar tu unidad para asegurar 100% de compatibilidad con tu laptop o tarjeta madre.
+              </p>
+            </div>
+            <div>
+              <button class="btn btn-secondary btn-sm" data-zoom-img="assets/images/flyer-ssd.jpg" data-img-title="Modelos de Discos Duros SSD M.2 - SOFTPROCA">
+                <i class="fa-solid fa-expand"></i> Ampliar Flyer de Medidas
+              </button>
+            </div>
+          </div>
+
+          <div class="ssd-interactive-grid">
+            <!-- Imagen / Flyer de SSD con zoom -->
+            <div class="ssd-flyer-preview" data-zoom-img="assets/images/flyer-ssd.jpg" data-img-title="Modelos de Discos Duros SSD M.2 - SOFTPROCA">
+              <img src="assets/images/flyer-ssd.jpg" alt="Modelos de Discos Duros SSD M.2: 2230, 2242, 2260, 2280, 22110">
+              <div class="image-zoom-overlay">
+                <i class="fa-solid fa-magnifying-glass-plus"></i> Clic para Ampliar Flyer
+              </div>
+            </div>
+
+            <!-- Panel de Formatos Seleccionables -->
+            <div class="ssd-spec-cards">
+              <div class="ssd-spec-card active" data-ssd="2280">
+                <div class="ssd-spec-top">
+                  <span class="ssd-model-name">Formato 2280 (3,15 pulgadas / 80mm)</span>
+                  <span class="ssd-model-tag">Estándar Universal</span>
+                </div>
+                <div class="ssd-spec-desc">
+                  El más popular para laptops gamers, PCs de escritorio y consolas PS5. Disponible en NVMe PCIe 3.0 / 4.0 y SATA.
+                </div>
+              </div>
+
+              <div class="ssd-spec-card" data-ssd="2242">
+                <div class="ssd-spec-top">
+                  <span class="ssd-model-name">Formato 2242 (1,66 pulgadas / 42mm)</span>
+                  <span class="ssd-model-tag">Laptops Lenovo / Compactas</span>
+                </div>
+                <div class="ssd-spec-desc">
+                  Tamaño mediano. Frecuente como ranura secundaria de almacenamiento en equipos portátiles modernos.
+                </div>
+              </div>
+
+              <div class="ssd-spec-card" data-ssd="2230">
+                <div class="ssd-spec-top">
+                  <span class="ssd-model-name">Formato 2230 (1,18 pulgadas / 30mm)</span>
+                  <span class="ssd-model-tag">Steam Deck / Surface</span>
+                </div>
+                <div class="ssd-spec-desc">
+                  Ultra compacto. Diseñado especialmente para consolas portátiles (Steam Deck, ROG Ally, Legion Go) y tablets Surface Pro.
+                </div>
+              </div>
+
+              <div class="ssd-spec-card" data-ssd="2260">
+                <div class="ssd-spec-top">
+                  <span class="ssd-model-name">Formato 2260 (2,36 pulgadas / 60mm)</span>
+                  <span class="ssd-model-tag">Equipos Especiales</span>
+                </div>
+                <div class="ssd-spec-desc">
+                  Medida intermedia usada en ciertas placas madre personalizadas de marcas como Dell y HP.
+                </div>
+              </div>
+
+              <div class="ssd-spec-card" data-ssd="22110">
+                <div class="ssd-spec-top">
+                  <span class="ssd-model-name">Formato 22110 (4,33 pulgadas / 110mm)</span>
+                  <span class="ssd-model-tag">Servidores & Workstation</span>
+                </div>
+                <div class="ssd-spec-desc">
+                  Formato extendido empresarial con circuitos de protección contra cortes de energía imprevistos.
+                </div>
+              </div>
+
+              <!-- Detalle dinámico en vivo -->
+              <div style="background: var(--sp-bg-inner); border: 1px solid rgba(255,90,0,0.3); border-radius: 8px; padding: 16px; margin-top: 10px;">
+                <h4 id="ssd-active-title" style="color: var(--sp-orange); font-size: 1.15rem; margin-bottom: 4px;">SSD M.2 Formato 2280 (22mm x 80mm)</h4>
+                <div id="ssd-active-speed" style="font-family: var(--sp-font-mono); font-size: 0.85rem; color: #10B981; margin-bottom: 6px;">Rendimiento: Hasta 7500 MB/s (NVMe Gen4) o 550 MB/s (SATA)</div>
+                <p id="ssd-active-usage" style="font-size: 0.88rem; color: var(--sp-text-secondary); margin: 0;">El estándar más utilizado en laptops modernas, PCs de escritorio y consolas PS5. Excelente disipación y variedad de capacidades (hasta 4TB).</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- =========================================================================
+             ARTÍCULOS Y CONSEJOS TÉCNICOS
+             ========================================================================= -->
+        <div class="section-header" style="margin-top: 70px; margin-bottom: 40px;">
+          <span class="subtitle">Artículos Destacados</span>
+          <h2 class="title">Consejos para Maximizar tu Rendimiento</h2>
+          <p class="description">
+            Haz clic en cualquiera de los artículos para abrir la explicación detallada y los pasos recomendados por nuestro equipo técnico.
+          </p>
+        </div>
+
+        <div class="tips-grid">
+          <!-- Tip 1 -->
+          <article class="tip-card" data-tip-id="tip-ssd">
+            <div class="tip-meta">
+              <span class="tip-tag">Hardware / SSD</span>
+              <span class="tip-read-time"><i class="fa-regular fa-clock"></i> 3 min lectura</span>
+            </div>
+            <h3 class="tip-title">¿Cómo saber qué SSD M.2 es compatible con tu laptop? (NVMe vs SATA)</h3>
+            <p class="tip-excerpt">
+              Aprende a diferenciar las muescas M-Key y B+M Key, además de conocer las medidas exactas (2280, 2242, 2230) antes de comprar para no perder tu dinero.
+            </p>
+            <span class="tip-read-more">
+              Leer Guía Completa <i class="fa-solid fa-arrow-right"></i>
+            </span>
+          </article>
+
+          <!-- Tip 2 -->
+          <article class="tip-card" data-tip-id="tip-diseno">
+            <div class="tip-meta">
+              <span class="tip-tag">Diseño & 3D</span>
+              <span class="tip-read-time"><i class="fa-regular fa-clock"></i> 4 min lectura</span>
+            </div>
+            <h3 class="tip-title">Requisitos para mover AutoCAD, Revit y 3ds Max sin que tu PC se congele</h3>
+            <p class="tip-excerpt">
+              Descubre qué componentes priorizar: ¿Más procesador, más memoria RAM o una tarjeta gráfica dedicada? Consejos para renderizar sin sobrecalentar el equipo.
+            </p>
+            <span class="tip-read-more">
+              Leer Guía Completa <i class="fa-solid fa-arrow-right"></i>
+            </span>
+          </article>
+
+          <!-- Tip 3 -->
+          <article class="tip-card" data-tip-id="tip-temperatura">
+            <div class="tip-meta">
+              <span class="tip-tag">Mantenimiento</span>
+              <span class="tip-read-time"><i class="fa-regular fa-clock"></i> 3 min lectura</span>
+            </div>
+            <h3 class="tip-title">Mantenimiento Térmico en Maracaibo: El enemigo invisible de tu laptop</h3>
+            <p class="tip-excerpt">
+              En nuestra ciudad, las temperaturas ambientales extremas secan la pasta térmica en pocos meses provocando Thermal Throttling. Aprende cada cuánto cambiarla.
+            </p>
+            <span class="tip-read-more">
+              Leer Guía Completa <i class="fa-solid fa-arrow-right"></i>
+            </span>
+          </article>
+        </div>
+
+        <!-- Banner de Asistencia Directa -->
+        <div style="background: var(--sp-bg-card); border: 1px solid var(--sp-border); border-radius: var(--sp-radius-xl); padding: 40px; text-align: center; margin-top: 50px; box-shadow: var(--sp-shadow-card);">
+          <h3 style="font-size: 1.8rem; margin-bottom: 8px;">¿Necesitas asesoría técnica para tu caso particular?</h3>
+          <p style="color: var(--sp-text-secondary); max-width: 600px; margin: 0 auto 20px;">
+            Escríbenos directamente o visítanos en Edif. Flamingo (Maracaibo) para hacer el diagnóstico físico de tu equipo.
+          </p>
+          <a href="https://wa.me/584246402032?text=Hola%20Softproca!%20Le%C3%AD%20sus%20tips%20y%20deseo%20hacerles%20una%20consulta." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
+            <i class="fa-brands fa-whatsapp"></i> Consultar a Soporte al +58 4246402032
+          </a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       FOOTER
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="assets/images/logo-banner.png" alt="SOFTPROCA Logo" style="height: 48px; width: auto; margin-bottom: 14px;">
+        <p>
+          En <strong>SOFTPROCA C.A.</strong> somos tu aliado tecnológico en Maracaibo. Proveemos soluciones en hardware de alta velocidad, soporte técnico profesional e instalación especializada de software para arquitectura, diseño gráfico e ingeniería.
+        </p>
+        <div style="font-family: var(--sp-font-mono); font-size: 0.85rem; color: var(--sp-orange);">
+          <i class="fa-solid fa-shield-halved"></i> Calidad, rapidez y garantía comprobada.
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Páginas</h4>
+        <ul class="footer-links">
+          <li><a href="index.html"><i class="fa-solid fa-angle-right"></i> Inicio</a></li>
+          <li><a href="servicios.html"><i class="fa-solid fa-angle-right"></i> Servicios Técnicos</a></li>
+          <li><a href="productos.html"><i class="fa-solid fa-angle-right"></i> Venta de Productos</a></li>
+          <li><a href="tips.html"><i class="fa-solid fa-angle-right"></i> Tips & Guía SSD M.2</a></li>
+          <li><a href="citas-ubicacion.html"><i class="fa-solid fa-angle-right"></i> Agendar Cita & Ubicación</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Tips Top</h4>
+        <ul class="footer-links">
+          <li><a href="tips.html"><i class="fa-solid fa-angle-right"></i> Guía Medidas SSD M.2</a></li>
+          <li><a href="tips.html"><i class="fa-solid fa-angle-right"></i> NVMe vs SATA</a></li>
+          <li><a href="tips.html"><i class="fa-solid fa-angle-right"></i> Hardware para AutoCAD</a></li>
+          <li><a href="tips.html"><i class="fa-solid fa-angle-right"></i> Pasta Térmica en Maracaibo</a></li>
+          <li><a href="citas-ubicacion.html"><i class="fa-solid fa-angle-right"></i> Agendar Cita</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contacto & Ubicación</h4>
+        <div style="font-size: 0.9rem; line-height: 1.7;">
+          <p><strong style="color:#FFF;">Dirección:</strong> Av 5 de Julio con Calle 71. Edif. Flamingo, P/B. Diagonal a la E/S Los Almendros. Maracaibo, Zulia.</p>
+          <p style="margin-top: 8px;"><strong style="color:#FFF;">Teléfono / WhatsApp:</strong> <br><a href="tel:+584246402032" style="color: var(--sp-orange); font-weight: bold;">+58 4246402032</a></p>
+          <p style="margin-top: 8px;"><strong style="color:#FFF;">Atención:</strong> Lunes a Sábado</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <div>
+        &copy; 2026 SOFTPROCA (Softpro C.A.) - Todos los derechos reservados.
+      </div>
+      <div style="color: var(--sp-orange-light); font-weight: 600;">
+        ¡Somos tu aliado tecnológico!
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       DRAWER LATERAL: COTIZADOR / CARRITO DE PRODUCTOS
+       ========================================================================= -->
+  <div class="cart-drawer-overlay" id="cart-drawer-overlay"></div>
+  <aside class="cart-drawer" id="cart-drawer">
+    <div class="cart-drawer-header">
+      <h3 class="cart-drawer-title">
+        <i class="fa-solid fa-receipt" style="color: var(--sp-orange);"></i> Tu Lista de Cotización
+      </h3>
+      <button class="cart-drawer-close" id="cart-close-btn" aria-label="Cerrar Cotizador">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <div class="cart-drawer-items" id="cart-items-container"></div>
+
+    <div class="cart-drawer-footer">
+      <div class="cart-total-row">
+        <span>Total Estimado:</span>
+        <span id="cart-total-amount" style="color: var(--sp-orange);">$0.00</span>
+      </div>
+      <button class="btn btn-whatsapp" id="btn-checkout-wa" style="width: 100%;" disabled>
+        <i class="fa-brands fa-whatsapp"></i> Enviar Cotización a WhatsApp (+58 4246402032)
+      </button>
+      <small style="display: block; text-align: center; color: var(--sp-text-muted); margin-top: 10px; font-size: 0.78rem;">
+        Precios referenciales en USD. Te responderemos al instante con la cotización formal y disponibilidad en tienda.
+      </small>
+    </div>
+  </aside>
+
+  <!-- =========================================================================
+       MODAL GENERAL (LIGHTBOX DE FLYERS Y ARTÍCULOS)
+       ========================================================================= -->
+  <div class="modal-overlay" id="general-modal-overlay">
+    <div class="modal-content-box">
+      <button class="modal-close-btn" id="general-modal-close" aria-label="Cerrar Ventana">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <h3 id="general-modal-title" style="font-size: 1.5rem; color: var(--sp-orange); margin-bottom: 16px;">Detalle</h3>
+      <div id="general-modal-body"></div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       WIDGET FLOTANTE DE WHATSAPP
+       ========================================================================= -->
+  <div class="whatsapp-float-widget">
+    <div class="whatsapp-tooltip">
+      <i class="fa-solid fa-comments"></i> ¡Soporte en línea! +58 4246402032
+    </div>
+    <a href="https://wa.me/584246402032?text=Hola%20SOFTPROCA!%20%C2%A1Somos%20tu%20aliado%20tecnol%C3%B3gico!%20Deseo%20hacer%20una%20consulta." target="_blank" rel="noopener noreferrer" class="whatsapp-float-btn" aria-label="Contactar soporte por WhatsApp">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+  </div>
+
+  <!-- Script Principal -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
