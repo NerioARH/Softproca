@@ -1,0 +1,32 @@
+# ==============================================================================
+# ROBOTS.TXT - SOFTPROCA C.A.
+# https://softproca.com
+# ==============================================================================
+
+User-agent: *
+Allow: /
+Allow: /assets/
+Allow: /assets/css/
+Allow: /assets/js/
+Allow: /assets/images/
+
+# Bloquear módulo privado de administración del cliente para que no aparezca en Google
+Disallow: /admin.html
+Disallow: /admin
+
+# Googlebot Específico
+User-agent: Googlebot
+Allow: /
+Disallow: /admin.html
+
+# Googlebot de Imágenes (Permitir indexación de fotos de trabajos y productos)
+User-agent: Googlebot-Image
+Allow: /assets/images/
+
+# Bingbot
+User-agent: Bingbot
+Allow: /
+Disallow: /admin.html
+
+# Mapa del Sitio XML (Sitemap para Google Search Console)
+Sitemap: https://softproca.com/sitemap.xml

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- =========================================================================
+       1. PÁGINA PRINCIPAL (INICIO)
+       ========================================================================= -->
+  <url>
+    <loc>https://softproca.com/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://softproca.com/assets/images/logo-sp.png</image:loc>
+      <image:title>SOFTPROCA Logo Oficial</image:title>
+      <image:caption>SOFTPROCA C.A. - ¡Somos tu aliado tecnológico en Maracaibo!</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://softproca.com/assets/images/hero-tecnico.jpg</image:loc>
+      <image:title>Especialista Técnico SOFTPROCA en Taller</image:title>
+      <image:caption>Atención técnica calificada en computación y hardware en Maracaibo</image:caption>
+    </image:image>
+  </url>
+
+  <!-- =========================================================================
+       2. SERVICIOS DESTACADOS (LO MÁS PEDIDO)
+       ========================================================================= -->
+  <url>
+    <loc>https://softproca.com/servicios-destacados.html</loc>
+    <lastmod>2026-10-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://softproca.com/assets/images/destacados/office-activado.jpg</image:loc>
+      <image:title>Activación y Soporte de Microsoft Office en Maracaibo</image:title>
+      <image:caption>Instalación y activación de Office 2021, 2024 y 365</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://softproca.com/assets/images/destacados/ssd-repotenciacion.jpg</image:loc>
+      <image:title>Repotenciación de Computadoras con SSD M.2 y RAM</image:title>
+      <image:caption>Upgrade de velocidad hasta 10 veces más rápido en laptops y PCs</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://softproca.com/assets/images/destacados/bisagras-antes-despues.jpg</image:loc>
+      <image:title>Reparación y Reconstrucción de Bisagras de Laptop</image:title>
+      <image:caption>Arreglo de carcasas rotas antes de que partan la pantalla</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://softproca.com/assets/images/destacados/impresora-test-cabezal.png</image:loc>
+      <image:title>Desbloqueo y Test de Inyectores de Impresoras Epson</image:title>
+      <image:caption>Mantenimiento de impresoras y reset de almohadillas</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://softproca.com/assets/images/destacados/toner-recarga-express.png</image:loc>
+      <image:title>Recarga Express de Tóner en Maracaibo</image:title>
+      <image:caption>Recarga y mantenimiento de cartuchos láser sin manchas ni rayas</image:caption>
+    </image:image>
+  </url>
+
+  <!-- =========================================================================
+       3. SERVICIOS TÉCNICOS GENERALES
+       ========================================================================= -->
+  <url>
+    <loc>https://softproca.com/servicios.html</loc>
+    <lastmod>2026-10-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://softproca.com/assets/images/flyer-design-software.jpg</image:loc>
+      <image:title>Instalación de Programas de Diseño y 3D en Maracaibo</image:title>
+      <image:caption>AutoCAD, Revit, 3ds Max, V-Ray, Adobe Suite y CorelDRAW</image:caption>
+    </image:image>
+  </url>
+
+  <!-- =========================================================================
+       4. CATÁLOGO DE PRODUCTOS & HARDWARE
+       ========================================================================= -->
+  <url>
+    <loc>https://softproca.com/productos.html</loc>
+    <lastmod>2026-10-14</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://softproca.com/assets/images/flyer-ssd-sizes.jpg</image:loc>
+      <image:title>Venta de Discos SSD M.2 NVMe en Maracaibo</image:title>
+      <image:caption>Catálogo de unidades de estado sólido y memorias RAM</image:caption>
+    </image:image>
+  </url>
+
+  <!-- =========================================================================
+       5. AGENDAR CITAS & UBICACIÓN FÍSICA
+       ========================================================================= -->
+  <url>
+    <loc>https://softproca.com/citas-ubicacion.html</loc>
+    <lastmod>2026-10-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://softproca.com/assets/images/flyer-location.jpg</image:loc>
+      <image:title>Croquis y Ubicación SOFTPROCA Edif Flamingo Maracaibo</image:title>
+      <image:caption>Dirección en Av 5 de Julio con Calle 71 diagonal a E/S Los Almendros</image:caption>
+    </image:image>
+  </url>
+
+  <!-- =========================================================================
+       6. TIPS TECNOLÓGICOS & GUÍAS HARDWARE
+       ========================================================================= -->
+  <url>
+    <loc>https://softproca.com/tips.html</loc>
+    <lastmod>2026-10-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+</urlset>

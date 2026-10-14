@@ -1,0 +1,18 @@
+{
+  "name": "SOFTPROCA C.A. - Tu Aliado Tecnológico",
+  "short_name": "SOFTPROCA",
+  "description": "Soporte técnico, activación de software, repotenciación con SSD M.2, reparación de laptops y venta de hardware en Maracaibo.",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#090B10",
+  "theme_color": "#FF5A00",
+  "lang": "es-VE",
+  "icons": [
+    {
+      "src": "assets/images/logo-sp.png",
+      "sizes": "192x192 512x512 1024x1024",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
