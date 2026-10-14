@@ -7,7 +7,7 @@
   <meta name="description" content="Agenda tu cita técnica o llamada con SOFTPROCA. Visítanos en Av. 5 de Julio con Calle 71, Edif. Flamingo, P/B, Maracaibo, Estado Zulia. Diagonal a la E/S Los Almendros.">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="assets/images/logo-icon.svg">
+  <link rel="icon" type="image/png" href="assets/images/logo-sp.png">
 
   <!-- Hojas de Estilo -->
   <link rel="stylesheet" href="assets/css/styles.css">
@@ -42,12 +42,16 @@
   <aside class="topbar">
     <div class="container topbar-content">
       <div class="topbar-info">
-        <span><i class="fa-solid fa-location-dot" style="color: var(--sp-orange);"></i> Av 5 de Julio con Calle 71. Edif. Flamingo, Maracaibo</span>
+        <a href="https://maps.app.goo.gl/AkBrpmmDveUEZYnY8" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">
+          <i class="fa-solid fa-location-dot" style="color: var(--sp-orange);"></i> Av 5 de Julio con Calle 71. Edif. Flamingo, Maracaibo
+        </a>
         <a href="tel:+584246402032"><i class="fa-solid fa-phone" style="color: var(--sp-orange);"></i> +58 424-6402032</a>
         <span><i class="fa-regular fa-clock" style="color: var(--sp-orange);"></i> Lun - Sáb: 8:30 AM - 5:30 PM</span>
       </div>
       <div class="topbar-slogan">
-        <i class="fa-solid fa-bolt"></i> ¡Somos tu aliado tecnológico!
+        <a href="https://maps.app.goo.gl/AkBrpmmDveUEZYnY8" target="_blank" rel="noopener noreferrer" class="badge-maps-live" style="font-size: 0.75rem; padding: 3px 10px;">
+          <i class="fa-solid fa-diamond-turn-right"></i> Abrir en Google Maps
+        </a>
       </div>
     </div>
   </aside>
@@ -58,14 +62,16 @@
   <header>
     <nav class="navbar" id="navbar">
       <div class="container nav-container">
-        <!-- Logo de Marca -->
+        <!-- Logo de Marca SP -->
         <a href="index.html" class="brand-logo" aria-label="Inicio SOFTPROCA">
-          <img src="assets/images/logo-banner.png" alt="SOFTPROCA Logo Oficial" onerror="this.src='assets/images/logo-sq.jpg'">
+          <img src="assets/images/logo-sp.png" alt="SOFTPROCA Logo Oficial">
+          <span class="brand-text">SOFTPROCA</span>
         </a>
 
         <!-- Menú de Navegación Multi-página -->
         <ul class="nav-links">
           <li><a href="index.html" class="nav-link">Inicio</a></li>
+          <li><a href="servicios-destacados.html" class="nav-link"><i class="fa-solid fa-fire" style="color: var(--sp-orange); margin-right: 4px;"></i> Destacados</a></li>
           <li><a href="servicios.html" class="nav-link">Servicios</a></li>
           <li><a href="productos.html" class="nav-link">Venta de Productos</a></li>
           <li><a href="tips.html" class="nav-link">Tips Tech</a></li>
@@ -293,7 +299,7 @@
             </ul>
 
             <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-              <a href="https://www.google.com/maps/search/?api=1&query=Av+5+de+Julio+con+Calle+71+Edif+Flamingo+Maracaibo" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+              <a href="https://maps.app.goo.gl/AkBrpmmDveUEZYnY8" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
                 <i class="fa-solid fa-diamond-turn-right"></i> Abrir en Google Maps
               </a>
               <a href="https://wa.me/584246402032?text=Hola%20Softproca!%20Estoy%20yendo%20a%20su%20tienda%20y%20deseo%20confirmar%20la%20ubicaci%C3%B3n." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm">
@@ -336,7 +342,10 @@
   <footer class="site-footer">
     <div class="container footer-grid">
       <div class="footer-brand">
-        <img src="assets/images/logo-banner.png" alt="SOFTPROCA Logo" style="height: 48px; width: auto; margin-bottom: 14px;">
+        <a href="index.html" style="text-decoration: none; display: inline-flex; align-items: center; gap: 8px; margin-bottom: 14px;">
+          <img src="assets/images/logo-sp.png" alt="SOFTPROCA Logo" style="height: 44px; width: auto;">
+          <span class="brand-text" style="color: #FFFFFF; font-size: 1.3rem;">SOFTPROCA</span>
+        </a>
         <p>
           En <strong>SOFTPROCA C.A.</strong> somos tu aliado tecnológico en Maracaibo. Proveemos soluciones en hardware de alta velocidad, soporte técnico profesional e instalación especializada de software para arquitectura, diseño gráfico e ingeniería.
         </p>
@@ -349,6 +358,7 @@
         <h4>Páginas</h4>
         <ul class="footer-links">
           <li><a href="index.html"><i class="fa-solid fa-angle-right"></i> Inicio</a></li>
+          <li><a href="servicios-destacados.html"><i class="fa-solid fa-angle-right"></i> Servicios Destacados (Lo Más Pedido)</a></li>
           <li><a href="servicios.html"><i class="fa-solid fa-angle-right"></i> Servicios Técnicos</a></li>
           <li><a href="productos.html"><i class="fa-solid fa-angle-right"></i> Venta de Productos</a></li>
           <li><a href="tips.html"><i class="fa-solid fa-angle-right"></i> Tips & Guía SSD M.2</a></li>
@@ -359,11 +369,11 @@
       <div class="footer-col">
         <h4>Servicios Top</h4>
         <ul class="footer-links">
-          <li><a href="servicios.html"><i class="fa-solid fa-angle-right"></i> Software de Diseño</a></li>
-          <li><a href="servicios.html"><i class="fa-solid fa-angle-right"></i> Mantenimiento Térmico</a></li>
-          <li><a href="productos.html"><i class="fa-solid fa-angle-right"></i> Discos SSD M.2 NVMe</a></li>
-          <li><a href="tips.html"><i class="fa-solid fa-angle-right"></i> Guía Visual de Formatos</a></li>
-          <li><a href="citas-ubicacion.html"><i class="fa-solid fa-angle-right"></i> Agendar Cita</a></li>
+          <li><a href="servicios-destacados.html#servicio-office"><i class="fa-solid fa-angle-right"></i> Activación de Office</a></li>
+          <li><a href="servicios-destacados.html#servicio-repotenciacion"><i class="fa-solid fa-angle-right"></i> Repotenciación SSD & RAM</a></li>
+          <li><a href="servicios-destacados.html#servicio-bisagras"><i class="fa-solid fa-angle-right"></i> Bisagras y Carcasas Laptop</a></li>
+          <li><a href="servicios-destacados.html#servicio-impresoras"><i class="fa-solid fa-angle-right"></i> Impresoras Epson & Inyectores</a></li>
+          <li><a href="servicios-destacados.html#servicio-toner"><i class="fa-solid fa-angle-right"></i> Recarga Express de Tóner</a></li>
         </ul>
       </div>
 
@@ -371,6 +381,11 @@
         <h4>Contacto & Ubicación</h4>
         <div style="font-size: 0.9rem; line-height: 1.7;">
           <p><strong style="color:#FFF;">Dirección:</strong> Av 5 de Julio con Calle 71. Edif. Flamingo, P/B. Diagonal a la E/S Los Almendros. Maracaibo, Zulia.</p>
+          <div style="margin: 8px 0;">
+            <a href="https://maps.app.goo.gl/AkBrpmmDveUEZYnY8" target="_blank" rel="noopener noreferrer" class="badge-maps-live" style="font-size: 0.8rem; padding: 4px 10px;">
+              <i class="fa-solid fa-diamond-turn-right"></i> Abrir en Google Maps
+            </a>
+          </div>
           <p style="margin-top: 8px;"><strong style="color:#FFF;">Teléfono / WhatsApp:</strong> <br><a href="tel:+584246402032" style="color: var(--sp-orange); font-weight: bold;">+58 4246402032</a></p>
           <p style="margin-top: 8px;"><strong style="color:#FFF;">Atención:</strong> Lunes a Sábado</p>
         </div>

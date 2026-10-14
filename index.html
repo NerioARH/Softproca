@@ -8,7 +8,7 @@
   <meta name="keywords" content="Softproca, Maracaibo, servicios tecnicos, venta hardware, instalacion software, AutoCAD, Revit, SSD M.2, soporte tecnico Zulia">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="assets/images/logo-icon.svg">
+  <link rel="icon" type="image/png" href="assets/images/logo-sp.png">
 
   <!-- Hojas de Estilo -->
   <link rel="stylesheet" href="assets/css/styles.css">
@@ -41,12 +41,16 @@
   <aside class="topbar">
     <div class="container topbar-content">
       <div class="topbar-info">
-        <span><i class="fa-solid fa-location-dot" style="color: var(--sp-orange);"></i> Av 5 de Julio con Calle 71. Edif. Flamingo, Maracaibo</span>
+        <a href="https://maps.app.goo.gl/AkBrpmmDveUEZYnY8" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">
+          <i class="fa-solid fa-location-dot" style="color: var(--sp-orange);"></i> Av 5 de Julio con Calle 71. Edif. Flamingo, Maracaibo
+        </a>
         <a href="tel:+584246402032"><i class="fa-solid fa-phone" style="color: var(--sp-orange);"></i> +58 424-6402032</a>
         <span><i class="fa-regular fa-clock" style="color: var(--sp-orange);"></i> Lun - Sáb: 8:30 AM - 5:30 PM</span>
       </div>
       <div class="topbar-slogan">
-        <i class="fa-solid fa-bolt"></i> ¡Somos tu aliado tecnológico!
+        <a href="https://maps.app.goo.gl/AkBrpmmDveUEZYnY8" target="_blank" rel="noopener noreferrer" class="badge-maps-live" style="font-size: 0.75rem; padding: 3px 10px;">
+          <i class="fa-solid fa-diamond-turn-right"></i> Abrir en Google Maps
+        </a>
       </div>
     </div>
   </aside>
@@ -57,14 +61,16 @@
   <header>
     <nav class="navbar" id="navbar">
       <div class="container nav-container">
-        <!-- Logo de Marca -->
+        <!-- Logo de Marca SP -->
         <a href="index.html" class="brand-logo" aria-label="Inicio SOFTPROCA">
-          <img src="assets/images/logo-banner.png" alt="SOFTPROCA Logo Oficial" onerror="this.src='assets/images/logo-sq.jpg'">
+          <img src="assets/images/logo-sp.png" alt="SOFTPROCA Logo Oficial">
+          <span class="brand-text">SOFTPROCA</span>
         </a>
 
         <!-- Menú de Navegación Multi-página -->
         <ul class="nav-links">
           <li><a href="index.html" class="nav-link active">Inicio</a></li>
+          <li><a href="servicios-destacados.html" class="nav-link"><i class="fa-solid fa-fire" style="color: var(--sp-orange); margin-right: 4px;"></i> Destacados</a></li>
           <li><a href="servicios.html" class="nav-link">Servicios</a></li>
           <li><a href="productos.html" class="nav-link">Venta de Productos</a></li>
           <li><a href="tips.html" class="nav-link">Tips Tech</a></li>
@@ -103,9 +109,14 @@
     <section class="hero" id="inicio">
       <div class="container hero-grid">
         <div class="hero-content">
-          <div class="badge-tech">
-            <span class="pulse-dot"></span>
-            Soluciones Informáticas en Maracaibo
+          <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 14px; align-items: center;">
+            <div class="badge-tech" style="margin-bottom: 0;">
+              <span class="pulse-dot"></span>
+              Soluciones Informáticas en Maracaibo
+            </div>
+            <a href="https://maps.app.goo.gl/AkBrpmmDveUEZYnY8" target="_blank" rel="noopener noreferrer" class="badge-maps-live">
+              <i class="fa-solid fa-location-dot"></i> Ver Sede en Google Maps
+            </a>
           </div>
 
           <h1 class="hero-headline">
@@ -113,12 +124,16 @@
           </h1>
 
           <p class="hero-lead">
-            Brindamos servicios especializados en instalación de software para arquitectura y diseño, venta de componentes y almacenamiento de alta velocidad, mantenimiento preventivo y soporte técnico calificado.
+            Brindamos servicios especializados en activación de software, repotenciación con discos SSD M.2, reparación de bisagras de laptop, servicio a impresoras y soporte técnico calificado en Maracaibo.
           </p>
 
+          <!-- BOTONES DESTACADOS AL ENTRAR A LA PÁGINA -->
           <div class="hero-cta-group">
-            <a href="servicios.html" class="btn btn-primary">
-              <i class="fa-solid fa-screwdriver-wrench"></i> Ver Nuestros Servicios
+            <a href="servicios-destacados.html" class="btn btn-primary" style="font-weight: 700; box-shadow: 0 4px 18px rgba(255, 90, 0, 0.4);">
+              <i class="fa-solid fa-fire"></i> Ver Servicios Más Pedidos
+            </a>
+            <a href="https://maps.app.goo.gl/AkBrpmmDveUEZYnY8" target="_blank" rel="noopener noreferrer" class="btn btn-maps-highlight" style="font-weight: 700;">
+              <i class="fa-solid fa-diamond-turn-right"></i> Cómo Llegar en Google Maps
             </a>
             <a href="productos.html" class="btn btn-secondary">
               <i class="fa-solid fa-bag-shopping"></i> Tienda de Productos
@@ -144,27 +159,104 @@
           </div>
         </div>
 
-        <!-- Columna Visual Hero -->
+        <!-- Columna Visual Hero: Foto del Técnico en Taller -->
         <div class="hero-visual">
           <div class="hero-card">
-            <div class="hero-card-img-wrap">
-              <img src="assets/images/logo-sq.jpg" alt="SOFTPROCA Identidad Visual" />
+            <div class="hero-card-img-wrap" style="height: 380px; overflow: hidden; background: #0b111e;">
+              <img src="assets/images/hero-tecnico.jpg" alt="Especialista Técnico SOFTPROCA en Taller" style="width: 100%; height: 100%; object-fit: cover; object-position: top center;" />
             </div>
             <div class="hero-card-info">
               <div class="hero-card-status">
                 <span class="status-indicator"></span>
                 <div>
-                  <strong style="display:block; font-size: 0.95rem; color: var(--sp-heading-color);">SOFTPROCA C.A.</strong>
-                  <small style="color: var(--sp-text-muted);">Edif. Flamingo, P/B - Maracaibo</small>
+                  <strong style="display:block; font-size: 0.95rem; color: var(--sp-heading-color);">Atención Técnica Calificada</strong>
+                  <small style="color: var(--sp-text-muted);">Taller Oficial SOFTPROCA &bull; Edif. Flamingo, Maracaibo</small>
                 </div>
               </div>
               <div class="hero-card-tags">
-                <span class="tag-pill">SOFTWARE</span>
-                <span class="tag-pill">HARDWARE</span>
-                <span class="tag-pill">SOPORTE</span>
+                <span class="tag-pill"><i class="fa-solid fa-screwdriver-wrench"></i> HARDWARE</span>
+                <span class="tag-pill"><i class="fa-solid fa-code"></i> SOFTWARE</span>
+                <span class="tag-pill"><i class="fa-solid fa-certificate"></i> GARANTÍA</span>
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         BANNER DESTACADO: LO MÁS PEDIDO EN NUESTRO TALLER (WORD DOC HIGHLIGHT)
+         ========================================================================= -->
+    <section class="container" style="margin-top: 10px; margin-bottom: 40px;">
+      <div style="background: linear-gradient(135deg, rgba(255, 90, 0, 0.08) 0%, rgba(16, 185, 129, 0.06) 100%); border: 1px solid var(--sp-border); border-radius: var(--sp-radius-xl); padding: 30px; box-shadow: var(--sp-shadow-card);">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; margin-bottom: 24px;">
+          <div>
+            <div style="display: inline-flex; align-items: center; gap: 8px; background: var(--sp-orange-dim); color: var(--sp-orange); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; padding: 4px 12px; border-radius: 999px; margin-bottom: 8px;">
+              <i class="fa-solid fa-fire"></i> Sección Especial
+            </div>
+            <h2 style="font-size: 1.6rem; color: var(--sp-heading-color); margin: 0;">Servicios Destacados: Lo Que Más Piden</h2>
+            <p style="color: var(--sp-text-secondary); margin: 6px 0 0; font-size: 0.95rem;">Soluciones directas para los problemas más comunes de computadoras, laptops e impresoras.</p>
+          </div>
+          <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+            <a href="servicios-destacados.html" class="btn btn-primary btn-sm">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> Ver Todos con Fotos y Precios
+            </a>
+            <a href="https://maps.app.goo.gl/AkBrpmmDveUEZYnY8" target="_blank" rel="noopener noreferrer" class="btn btn-maps-highlight btn-sm">
+              <i class="fa-solid fa-map-location-dot"></i> Visitar Taller
+            </a>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 16px;">
+          <!-- Item 1 -->
+          <a href="servicios-destacados.html#servicio-office" style="background: var(--sp-bg-card); border: 1px solid var(--sp-border); border-radius: var(--sp-radius-md); padding: 16px; text-decoration: none; color: inherit; transition: var(--sp-transition); display: flex; flex-direction: column; justify-content: space-between;" onmouseover="this.style.borderColor='var(--sp-orange)'; this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='var(--sp-border)'; this.style.transform='none'">
+            <div>
+              <div style="font-size: 1.5rem; color: #D83B01; margin-bottom: 8px;"><i class="fa-brands fa-microsoft"></i></div>
+              <strong style="color: var(--sp-heading-color); font-size: 0.98rem; display: block; margin-bottom: 6px;">Activación de Office</strong>
+              <p style="font-size: 0.82rem; color: var(--sp-text-muted); line-height: 1.4; margin: 0;">Quita avisos de producto desactivado en Word, Excel y PowerPoint.</p>
+            </div>
+            <span style="display: inline-flex; align-items: center; gap: 4px; color: var(--sp-orange); font-size: 0.8rem; font-weight: 600; margin-top: 12px;">Ver detalles &rarr;</span>
+          </a>
+
+          <!-- Item 2 -->
+          <a href="servicios-destacados.html#servicio-repotenciacion" style="background: var(--sp-bg-card); border: 1px solid var(--sp-border); border-radius: var(--sp-radius-md); padding: 16px; text-decoration: none; color: inherit; transition: var(--sp-transition); display: flex; flex-direction: column; justify-content: space-between;" onmouseover="this.style.borderColor='var(--sp-orange)'; this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='var(--sp-border)'; this.style.transform='none'">
+            <div>
+              <div style="font-size: 1.5rem; color: var(--sp-orange); margin-bottom: 8px;"><i class="fa-solid fa-microchip"></i></div>
+              <strong style="color: var(--sp-heading-color); font-size: 0.98rem; display: block; margin-bottom: 6px;">Repotenciación SSD & RAM</strong>
+              <p style="font-size: 0.82rem; color: var(--sp-text-muted); line-height: 1.4; margin: 0;">Hasta 10x más rápido. Tu equipo encenderá en 10 segundos.</p>
+            </div>
+            <span style="display: inline-flex; align-items: center; gap: 4px; color: var(--sp-orange); font-size: 0.8rem; font-weight: 600; margin-top: 12px;">Ver detalles &rarr;</span>
+          </a>
+
+          <!-- Item 3 -->
+          <a href="servicios-destacados.html#servicio-bisagras" style="background: var(--sp-bg-card); border: 1px solid var(--sp-border); border-radius: var(--sp-radius-md); padding: 16px; text-decoration: none; color: inherit; transition: var(--sp-transition); display: flex; flex-direction: column; justify-content: space-between;" onmouseover="this.style.borderColor='var(--sp-orange)'; this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='var(--sp-border)'; this.style.transform='none'">
+            <div>
+              <div style="font-size: 1.5rem; color: #EAB308; margin-bottom: 8px;"><i class="fa-solid fa-laptop-medical"></i></div>
+              <strong style="color: var(--sp-heading-color); font-size: 0.98rem; display: block; margin-bottom: 6px;">Reparación de Bisagras</strong>
+              <p style="font-size: 0.82rem; color: var(--sp-text-muted); line-height: 1.4; margin: 0;">Reconstrucción de carcasas rotas antes de que partan tu pantalla.</p>
+            </div>
+            <span style="display: inline-flex; align-items: center; gap: 4px; color: var(--sp-orange); font-size: 0.8rem; font-weight: 600; margin-top: 12px;">Ver detalles &rarr;</span>
+          </a>
+
+          <!-- Item 4 -->
+          <a href="servicios-destacados.html#servicio-impresoras" style="background: var(--sp-bg-card); border: 1px solid var(--sp-border); border-radius: var(--sp-radius-md); padding: 16px; text-decoration: none; color: inherit; transition: var(--sp-transition); display: flex; flex-direction: column; justify-content: space-between;" onmouseover="this.style.borderColor='var(--sp-orange)'; this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='var(--sp-border)'; this.style.transform='none'">
+            <div>
+              <div style="font-size: 1.5rem; color: #0284C7; margin-bottom: 8px;"><i class="fa-solid fa-print"></i></div>
+              <strong style="color: var(--sp-heading-color); font-size: 0.98rem; display: block; margin-bottom: 6px;">Desbloqueo de Impresoras</strong>
+              <p style="font-size: 0.82rem; color: var(--sp-text-muted); line-height: 1.4; margin: 0;">Reset de almohadillas, destape de cabezales y test de inyectores.</p>
+            </div>
+            <span style="display: inline-flex; align-items: center; gap: 4px; color: var(--sp-orange); font-size: 0.8rem; font-weight: 600; margin-top: 12px;">Ver detalles &rarr;</span>
+          </a>
+
+          <!-- Item 5 -->
+          <a href="servicios-destacados.html#servicio-toner" style="background: var(--sp-bg-card); border: 1px solid var(--sp-border); border-radius: var(--sp-radius-md); padding: 16px; text-decoration: none; color: inherit; transition: var(--sp-transition); display: flex; flex-direction: column; justify-content: space-between;" onmouseover="this.style.borderColor='var(--sp-orange)'; this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='var(--sp-border)'; this.style.transform='none'">
+            <div>
+              <div style="font-size: 1.5rem; color: #10B981; margin-bottom: 8px;"><i class="fa-solid fa-fill-drip"></i></div>
+              <strong style="color: var(--sp-heading-color); font-size: 0.98rem; display: block; margin-bottom: 6px;">Recarga Express Tóner</strong>
+              <p style="font-size: 0.82rem; color: var(--sp-text-muted); line-height: 1.4; margin: 0;">Impresión nítida al 100%, sin manchas ni rayas fantasma.</p>
+            </div>
+            <span style="display: inline-flex; align-items: center; gap: 4px; color: var(--sp-orange); font-size: 0.8rem; font-weight: 600; margin-top: 12px;">Ver detalles &rarr;</span>
+          </a>
         </div>
       </div>
     </section>
@@ -468,7 +560,10 @@
   <footer class="site-footer">
     <div class="container footer-grid">
       <div class="footer-brand">
-        <img src="assets/images/logo-banner.png" alt="SOFTPROCA Logo" style="height: 48px; width: auto; margin-bottom: 14px;">
+        <a href="index.html" style="text-decoration: none; display: inline-flex; align-items: center; gap: 8px; margin-bottom: 14px;">
+          <img src="assets/images/logo-sp.png" alt="SOFTPROCA Logo" style="height: 44px; width: auto;">
+          <span class="brand-text" style="color: #FFFFFF; font-size: 1.3rem;">SOFTPROCA</span>
+        </a>
         <p>
           En <strong>SOFTPROCA C.A.</strong> somos tu aliado tecnológico en Maracaibo. Proveemos soluciones en hardware de alta velocidad, soporte técnico profesional e instalación especializada de software para arquitectura, diseño gráfico e ingeniería.
         </p>
@@ -481,6 +576,7 @@
         <h4>Páginas</h4>
         <ul class="footer-links">
           <li><a href="index.html"><i class="fa-solid fa-angle-right"></i> Inicio</a></li>
+          <li><a href="servicios-destacados.html"><i class="fa-solid fa-angle-right"></i> Servicios Destacados (Lo Más Pedido)</a></li>
           <li><a href="servicios.html"><i class="fa-solid fa-angle-right"></i> Servicios Técnicos</a></li>
           <li><a href="productos.html"><i class="fa-solid fa-angle-right"></i> Venta de Productos</a></li>
           <li><a href="tips.html"><i class="fa-solid fa-angle-right"></i> Tips & Guía SSD M.2</a></li>
@@ -491,11 +587,11 @@
       <div class="footer-col">
         <h4>Servicios Top</h4>
         <ul class="footer-links">
-          <li><a href="servicios.html"><i class="fa-solid fa-angle-right"></i> Programas de Diseño 3D</a></li>
-          <li><a href="servicios.html"><i class="fa-solid fa-angle-right"></i> Autodesk AutoCAD & Revit</a></li>
-          <li><a href="servicios.html"><i class="fa-solid fa-angle-right"></i> Mantenimiento Térmico</a></li>
-          <li><a href="productos.html"><i class="fa-solid fa-angle-right"></i> Discos SSD M.2 NVMe</a></li>
-          <li><a href="citas-ubicacion.html"><i class="fa-solid fa-angle-right"></i> Agendar Cita Técnica</a></li>
+          <li><a href="servicios-destacados.html#servicio-office"><i class="fa-solid fa-angle-right"></i> Activación de Office</a></li>
+          <li><a href="servicios-destacados.html#servicio-repotenciacion"><i class="fa-solid fa-angle-right"></i> Repotenciación SSD & RAM</a></li>
+          <li><a href="servicios-destacados.html#servicio-bisagras"><i class="fa-solid fa-angle-right"></i> Bisagras y Carcasas Laptop</a></li>
+          <li><a href="servicios-destacados.html#servicio-impresoras"><i class="fa-solid fa-angle-right"></i> Impresoras Epson & Inyectores</a></li>
+          <li><a href="servicios-destacados.html#servicio-toner"><i class="fa-solid fa-angle-right"></i> Recarga Express de Tóner</a></li>
         </ul>
       </div>
 
@@ -503,6 +599,11 @@
         <h4>Contacto & Ubicación</h4>
         <div style="font-size: 0.9rem; line-height: 1.7;">
           <p><strong style="color:#FFF;">Dirección:</strong> Av 5 de Julio con Calle 71. Edif. Flamingo, P/B. Diagonal a la E/S Los Almendros. Maracaibo, Zulia.</p>
+          <div style="margin: 8px 0;">
+            <a href="https://maps.app.goo.gl/AkBrpmmDveUEZYnY8" target="_blank" rel="noopener noreferrer" class="badge-maps-live" style="font-size: 0.8rem; padding: 4px 10px;">
+              <i class="fa-solid fa-diamond-turn-right"></i> Abrir en Google Maps
+            </a>
+          </div>
           <p style="margin-top: 8px;"><strong style="color:#FFF;">Teléfono / WhatsApp:</strong> <br><a href="tel:+584246402032" style="color: var(--sp-orange); font-weight: bold;">+58 4246402032</a></p>
           <p style="margin-top: 8px;"><strong style="color:#FFF;">Atención:</strong> Lunes a Sábado</p>
         </div>

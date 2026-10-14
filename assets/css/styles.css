@@ -581,38 +581,45 @@ button, input, select, textarea {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 14px 24px;
+  padding: 12px 24px;
+  gap: 14px;
+  flex-wrap: nowrap;
 }
 
 .brand-logo {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 10px;
+  flex-shrink: 0;
 }
 
 .brand-logo img {
-  height: 48px;
+  height: 40px;
   width: auto;
   object-fit: contain;
-  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.25));
 }
 
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 14px;
   list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-shrink: 1;
 }
 
 .nav-link {
   font-family: var(--sp-font-head);
-  font-size: 1.05rem;
-  font-weight: 600;
+  font-size: 0.92rem;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.4px;
   color: var(--sp-text-secondary);
   padding: 6px 4px;
   position: relative;
+  white-space: nowrap;
 }
 
 .nav-link:hover, .nav-link.active {
@@ -3670,4 +3677,286 @@ button, input, select, textarea {
     right: 16px;
     left: 16px;
   }
+
+  .destacado-card-header {
+    padding: 16px;
+  }
+  .destacado-card-body {
+    padding: 18px 14px;
+  }
+  .destacado-actions {
+    flex-direction: column;
+  }
+  .destacado-actions .btn {
+    width: 100%;
+  }
+  .badge-maps-live {
+    font-size: 0.72rem;
+    padding: 4px 10px;
+  }
+  .brand-text {
+    font-size: 1.12rem;
+    letter-spacing: 1px;
+  }
+}
+
+/* ==========================================================================
+   ELEMENTOS DESTACADOS: BOTÓN GOOGLE MAPS, LOGO SP & SERVICIOS DESTACADOS
+   ========================================================================== */
+
+/* Tipografía de Marca al lado del Logo SP */
+.brand-text {
+  font-family: var(--sp-font-head);
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: var(--sp-heading-color);
+  text-transform: uppercase;
+  display: inline-block;
+  line-height: 1;
+}
+
+/* Botón de Google Maps de Alto Impacto */
+.btn-maps-highlight {
+  background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+  color: #FFFFFF !important;
+  border: 1px solid rgba(16, 185, 129, 0.5);
+  box-shadow: 0 4px 18px rgba(16, 185, 129, 0.35);
+  font-family: var(--sp-font-head);
+  font-weight: 700;
+}
+
+.btn-maps-highlight:hover {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(16, 185, 129, 0.55);
+  color: #FFFFFF !important;
+}
+
+/* Insignia Interactiva de Google Maps en Cabeceras */
+.badge-maps-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  border-radius: 999px;
+  color: #10B981;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--sp-transition);
+}
+
+.badge-maps-live:hover {
+  background: rgba(16, 185, 129, 0.22);
+  border-color: #10B981;
+  transform: translateY(-1px);
+}
+
+/* Contenedor y Tarjetas de Servicios Destacados */
+.destacados-container {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.destacado-card {
+  background: var(--sp-bg-card);
+  border: 1px solid var(--sp-border);
+  border-radius: var(--sp-radius-xl);
+  overflow: hidden;
+  box-shadow: var(--sp-shadow-card);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.destacado-card:hover {
+  border-color: var(--sp-orange);
+  box-shadow: 0 14px 40px rgba(255, 90, 0, 0.16);
+}
+
+.destacado-card-header {
+  padding: 24px 30px;
+  border-bottom: 1px solid var(--sp-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  background: linear-gradient(180deg, var(--sp-bg-inner) 0%, transparent 100%);
+}
+
+.destacado-title-group h2 {
+  font-size: 1.55rem;
+  color: var(--sp-heading-color);
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.destacado-card-body {
+  padding: 30px;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 36px;
+  align-items: start;
+}
+
+@media (max-width: 992px) {
+  .destacado-card-body {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+}
+
+.destacado-callout {
+  padding: 16px 20px;
+  border-radius: var(--sp-radius-md);
+  margin-bottom: 22px;
+  font-size: 0.94rem;
+  line-height: 1.55;
+  background: var(--sp-orange-dim);
+  border-left: 4px solid var(--sp-orange);
+}
+
+.destacado-callout.warning {
+  background: rgba(245, 158, 11, 0.12);
+  border-left-color: #F59E0B;
+}
+
+.destacado-callout.warning strong {
+  color: #F59E0B;
+}
+
+.destacado-checklist {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 18px 0 24px;
+}
+
+.destacado-checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--sp-text-primary);
+}
+
+.destacado-checklist li i {
+  color: #10B981;
+  font-size: 1.1rem;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.destacado-gallery-box {
+  background: var(--sp-bg-inner);
+  border: 1px solid var(--sp-border);
+  border-radius: var(--sp-radius-lg);
+  padding: 18px;
+}
+
+.destacado-gallery-title {
+  font-size: 0.88rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--sp-text-secondary);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.destacado-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 12px;
+}
+
+.destacado-gallery-item {
+  position: relative;
+  border-radius: var(--sp-radius-md);
+  overflow: hidden;
+  border: 1px solid var(--sp-border);
+  background: var(--sp-bg-card);
+  cursor: pointer;
+  aspect-ratio: 4 / 3;
+}
+
+.destacado-gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.destacado-gallery-item:hover img {
+  transform: scale(1.06);
+}
+
+.destacado-gallery-item .zoom-badge {
+  position: absolute;
+  bottom: 6px;
+  right: 6px;
+  background: rgba(0, 0, 0, 0.75);
+  color: #FFFFFF;
+  padding: 3px 8px;
+  border-radius: var(--sp-radius-sm);
+  font-size: 0.72rem;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  pointer-events: none;
+}
+
+.destacado-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--sp-border);
+}
+
+/* Quick Jump Category Bar */
+.destacados-quick-nav {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 8px 4px 16px;
+  margin-bottom: 30px;
+  scrollbar-width: none;
+}
+
+.destacados-quick-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.destacados-jump-btn {
+  white-space: nowrap;
+  background: var(--sp-bg-card);
+  border: 1px solid var(--sp-border);
+  color: var(--sp-text-secondary);
+  font-family: var(--sp-font-head);
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: var(--sp-transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.destacados-jump-btn:hover {
+  background: var(--sp-orange-dim);
+  border-color: var(--sp-orange);
+  color: var(--sp-orange);
 }

@@ -992,8 +992,8 @@ document.addEventListener('DOMContentLoaded', () => {
           Av 5 de Julio con Calle 71. Edif. Flamingo, P/B.<br>
           <strong>Diagonal a la E/S Los Almendros</strong>
         </p>
-        <a href="https://www.google.com/maps/search/?api=1&query=Av+5+de+Julio+con+Calle+71+Edif+Flamingo+Maracaibo" target="_blank" style="display: inline-block; background: #FF5A00; color: #FFF; padding: 4px 10px; border-radius: 4px; font-weight: bold; font-size: 0.8rem; text-decoration: none;">
-          Ver en Google Maps
+        <a href="https://maps.app.goo.gl/AkBrpmmDveUEZYnY8" target="_blank" rel="noopener noreferrer" style="display: inline-block; background: #FF5A00; color: #FFF; padding: 5px 12px; border-radius: 4px; font-weight: bold; font-size: 0.82rem; text-decoration: none;">
+          <i class="fa-solid fa-diamond-turn-right"></i> Abrir en Google Maps
         </a>
       </div>
     `).openPopup();
