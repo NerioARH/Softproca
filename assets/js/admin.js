@@ -70,107 +70,376 @@
 
   // Catálogo base de fábrica de SOFTPROCA
   const DEFAULT_PRODUCTS = [
-    {
-      id: 'ssd-nvme-1tb',
-      category: 'ssd',
-      name: 'SSD M.2 NVMe PCIe Gen3x4 1TB',
-      specs: 'Velocidad hasta 3500 MB/s lectura. Formato 2280 estándar para Laptops y PCs de alto rendimiento.',
-      price: 65,
-      stockStatus: 'in_stock',
-      badge: 'Más Vendido',
-      icon: 'fa-hard-drive'
-    },
-    {
-      id: 'ssd-nvme-512gb',
-      category: 'ssd',
-      name: 'SSD M.2 NVMe PCIe 512GB',
-      specs: 'Ideal para revitalizar tu equipo con arranque ultrarrápido y carga instantánea de programas de diseño.',
-      price: 42,
-      stockStatus: 'in_stock',
-      badge: 'Recomendado',
-      icon: 'fa-hard-drive'
-    },
-    {
-      id: 'ssd-sata-m2',
-      category: 'ssd',
-      name: 'SSD M.2 SATA III 512GB (B&M Key)',
-      specs: 'Compatibilidad con laptops ultradelgadas y tarjetas madres con puertos M.2 SATA (550 MB/s).',
-      price: 38,
-      stockStatus: 'in_stock',
-      badge: 'Compatibilidad',
-      icon: 'fa-hard-drive'
-    },
-    {
-      id: 'ssd-2230-512gb',
-      category: 'ssd',
-      name: 'SSD M.2 2230 NVMe 512GB Compacto',
-      specs: 'Formato ultra corto (30mm) para consolas Steam Deck, ROG Ally y tablets Microsoft Surface.',
-      price: 55,
-      stockStatus: 'in_stock',
-      badge: 'Especial',
-      icon: 'fa-microchip'
-    },
-    {
-      id: 'ssd-sata-25-1tb',
-      category: 'ssd',
-      name: 'SSD 2.5" SATA III 1TB (Reemplazo HDD)',
-      specs: 'Actualización directa para laptops y computadoras tradicionales. 10x más rápido que disco mecánico.',
-      price: 58,
-      stockStatus: 'in_stock',
-      badge: 'Upgrade Clásico',
-      icon: 'fa-database'
-    },
-    {
-      id: 'ram-ddr4-16gb',
-      category: 'ram',
-      name: 'Memoria RAM 16GB DDR4 3200MHz',
-      specs: 'Disponible para Laptop (SO-DIMM) y PC Escritorio (UDIMM). Disipador de calor incluido.',
-      price: 42,
-      stockStatus: 'in_stock',
-      badge: 'Alta Demanda',
-      icon: 'fa-memory'
-    },
-    {
-      id: 'ram-ddr5-16gb',
-      category: 'ram',
-      name: 'Memoria RAM 16GB DDR5 5200MHz',
-      specs: 'Máximo ancho de banda para Workstations modernas de arquitectura, render y renderizado 3D.',
-      price: 59,
-      stockStatus: 'in_stock',
-      badge: 'Next-Gen',
-      icon: 'fa-memory'
-    },
-    {
-      id: 'caddy-hdd-adapter',
-      category: 'componentes',
-      name: 'Adaptador Caddy 9.5mm / 12.7mm',
-      specs: 'Permite conservar tu disco HDD original en la bahía de DVD y poner el SSD en la bahía principal.',
-      price: 12,
-      stockStatus: 'in_stock',
-      badge: 'Accesorio',
-      icon: 'fa-screwdriver-wrench'
-    },
-    {
-      id: 'pasta-termica-premium',
-      category: 'componentes',
-      name: 'Pasta Térmica Alta Conductividad 4g',
-      specs: 'Compuesto térmico de alto rendimiento sin conductividad eléctrica. Baja temperaturas hasta 12°C.',
-      price: 14,
-      stockStatus: 'in_stock',
-      badge: 'Mantenimiento',
-      icon: 'fa-temperature-arrow-down'
-    },
-    {
-      id: 'soft-pack-diseno',
-      category: 'software',
-      name: 'Pack Instalación Diseño & Arquitectura',
-      specs: 'Instalación garantizada y optimizada de AutoCAD + Revit + 3ds Max + V-Ray + Adobe Suite.',
-      price: 25,
-      stockStatus: 'in_stock',
-      badge: 'Servicio Top',
-      icon: 'fa-laptop-code'
-    }
-  ];
+  {
+    "id": "motherboard-asrock-z790-wifi",
+    "category": "componentes",
+    "name": "Tarjeta Madre ASRock Z790 Pro RS WiFi",
+    "specs": "Socket LGA1700 compatible con procesadores Intel Core 12va, 13va y 14va Gen. Soporta memoria DDR5, PCIe 5.0, Wi-Fi 6E, audio HD y Polychrome SYNC.",
+    "price": 220,
+    "stockStatus": "in_stock",
+    "badge": "Gama Alta",
+    "icon": "fa-microchip",
+    "image": "assets/images/productos/motherboard-asrock-z790-wifi.png"
+  },
+  {
+    "id": "impresora-hp-laserjet-p1102",
+    "category": "impresoras",
+    "name": "Impresora HP LaserJet Pro P1102 (Nueva)",
+    "specs": "Impresora láser monocromática compacta de alta velocidad y durabilidad legendaria. Excelente rendimiento de páginas a muy bajo costo.",
+    "price": 200,
+    "stockStatus": "in_stock",
+    "badge": "Nueva en Caja",
+    "icon": "fa-print",
+    "image": "assets/images/productos/impresora-hp-laserjet-p1102.png"
+  },
+  {
+    "id": "ssd-hp-480gb-sata",
+    "category": "ssd",
+    "name": "Disco Sólido SSD HP S700 480GB SATA III",
+    "specs": "Velocidad hasta 560 MB/s lectura y 515 MB/s escritura. 3D NAND Flash para laptops y PCs de escritorio. Aumenta drásticamente la velocidad del equipo.",
+    "price": 90,
+    "stockStatus": "in_stock",
+    "badge": "Top Ventas",
+    "icon": "fa-hard-drive",
+    "image": "assets/images/productos/ssd-hp-480gb-sata.png"
+  },
+  {
+    "id": "bateria-laptop-dell-1wnd8",
+    "category": "componentes",
+    "name": "Batería Original Laptop Dell Tipo 1WND8",
+    "specs": "Batería de repuesto garantizada para laptops Dell Inspiron y Latitude. Celdas de iones de litio de alta calidad y máxima autonomía.",
+    "price": 50,
+    "stockStatus": "in_stock",
+    "badge": "Garantizada",
+    "icon": "fa-battery-full",
+    "image": "assets/images/productos/bateria-laptop-dell-1wnd8.png"
+  },
+  {
+    "id": "ssd-hp-120gb-sata",
+    "category": "ssd",
+    "name": "Disco Sólido SSD HP 120GB SATA III 2.5\"",
+    "specs": "Actualización esencial y económica para arrancar Windows y programas de oficina en segundos. Compatible con cualquier PC o laptop.",
+    "price": 35,
+    "stockStatus": "in_stock",
+    "badge": "Económico",
+    "icon": "fa-hard-drive",
+    "image": "assets/images/productos/ssd-hp-120gb-sata.png"
+  },
+  {
+    "id": "fuente-de-poder-agiler-600w",
+    "category": "componentes",
+    "name": "Fuente de Poder Agiler 600W (AGI-PS600)",
+    "specs": "600 Watts de potencia con ventilador silencioso de 120mm, conectores SATA, Molex y PCIe. Ideal para computadoras de oficina y gaming medio.",
+    "price": 28,
+    "stockStatus": "in_stock",
+    "badge": "Recomendada",
+    "icon": "fa-bolt",
+    "image": "assets/images/productos/fuente-de-poder-agiler-600w.png"
+  },
+  {
+    "id": "toner-stamprint-premium",
+    "category": "impresoras",
+    "name": "Cartucho de Tóner Stamprint Premium",
+    "specs": "Cartucho de tóner genérico premium de alto rendimiento y máxima densidad de negro. Textos e imágenes limpias para empresas y colegios.",
+    "price": 25,
+    "stockStatus": "in_stock",
+    "badge": "Rendimiento",
+    "icon": "fa-box",
+    "image": "assets/images/productos/toner-stamprint-premium.png"
+  },
+  {
+    "id": "toner-laserjet-compatible",
+    "category": "impresoras",
+    "name": "Cartucho de Tóner HP LaserJet Compatible",
+    "specs": "Compatible con impresoras HP LaserJet (modelos 85A / P1102 / M1132). Impresiones nítidas, confiables y de bajo costo.",
+    "price": 15,
+    "stockStatus": "in_stock",
+    "badge": "Ahorro",
+    "icon": "fa-box",
+    "image": "assets/images/productos/toner-laserjet-compatible.png"
+  },
+  {
+    "id": "cargador-dc-12v-5a",
+    "category": "cables",
+    "name": "Cargador / Fuente Regulada DC 12V 5A",
+    "specs": "Adaptador de poder conmutado 12V a 5 Amperios (conector universal 5.5mm). Para sistemas de cámaras de seguridad, monitores, tiras LED y routers.",
+    "price": 15,
+    "stockStatus": "in_stock",
+    "badge": "Multiuso",
+    "icon": "fa-plug",
+    "image": "assets/images/productos/cargador-dc-12v-5a.png"
+  },
+  {
+    "id": "teclado-computadora-usb",
+    "category": "perifericos",
+    "name": "Teclado USB para Computadora (Español)",
+    "specs": "Teclado de membrana de tacto suave y respuesta rápida, distribución en español con letra Ñ, teclas resistentes al derrame de líquidos.",
+    "price": 10,
+    "stockStatus": "in_stock",
+    "badge": "Oficina",
+    "icon": "fa-keyboard",
+    "image": "assets/images/productos/teclado-computadora-usb.png"
+  },
+  {
+    "id": "receptor-wifi-inalambrico",
+    "category": "perifericos",
+    "name": "Receptor Inalámbrico USB WiFi con Antena",
+    "specs": "Antena de alta ganancia USB para conexión inalámbrica veloz. Ideal para dotar de WiFi a PCs de escritorio o laptops con tarjeta dañada.",
+    "price": 10,
+    "stockStatus": "in_stock",
+    "badge": "Conectividad",
+    "icon": "fa-wifi",
+    "image": "assets/images/productos/receptor-wifi-inalambrico.png"
+  },
+  {
+    "id": "protector-de-voltaje",
+    "category": "componentes",
+    "name": "Protector de Voltaje para Equipos Electrónicos",
+    "specs": "Protege computadoras, televisores e impresoras contra picos de voltaje, sobretensiones y apagones. Indicadores LED de seguridad.",
+    "price": 10,
+    "stockStatus": "in_stock",
+    "badge": "Seguridad",
+    "icon": "fa-shield-halved",
+    "image": "assets/images/productos/protector-de-voltaje.png"
+  },
+  {
+    "id": "cable-displayport-hd",
+    "category": "cables",
+    "name": "Cable DisplayPort de Alta Resolución",
+    "specs": "Cable DP a DP macho de alto ancho de banda. Soporta altas frecuencias de refresco (144Hz, 165Hz, 240Hz) en monitores gaming y 4K.",
+    "price": 10,
+    "stockStatus": "in_stock",
+    "badge": "Gaming / 144Hz",
+    "icon": "fa-tv",
+    "image": "assets/images/productos/cable-displayport-hd.png"
+  },
+  {
+    "id": "tinta-negra-static-control",
+    "category": "impresoras",
+    "name": "Tinta Negra Static Control para Impresoras",
+    "specs": "Botella de tinta de alta formulación para recarga de sistemas continuos Epson Ecotank, Canon y HP. Negro intenso y secado rápido.",
+    "price": 8,
+    "stockStatus": "in_stock",
+    "badge": "Universal",
+    "icon": "fa-droplet",
+    "image": "assets/images/productos/tinta-negra-static-control.png"
+  },
+  {
+    "id": "cable-sata-a-usb-c",
+    "category": "cables",
+    "name": "Cable Adaptador SATA a USB Tipo C",
+    "specs": "Permite conectar cualquier disco SSD o HDD de 2.5\" directo al puerto USB-C de tu laptop o PC sin necesidad de fuente externa.",
+    "price": 8,
+    "stockStatus": "in_stock",
+    "badge": "Práctico",
+    "icon": "fa-plug",
+    "image": "assets/images/productos/cable-sata-a-usb-c.png"
+  },
+  {
+    "id": "mouse-optico-blanco",
+    "category": "perifericos",
+    "name": "Mouse Óptico para Computadora (Blanco)",
+    "specs": "Diseño ergonómico y minimalista en color blanco, sensor óptico de 1200 DPI, rueda de desplazamiento precisa y conexión USB.",
+    "price": 8,
+    "stockStatus": "in_stock",
+    "badge": "Moderno",
+    "icon": "fa-computer-mouse",
+    "image": "assets/images/productos/mouse-optico-blanco.png"
+  },
+  {
+    "id": "control-remoto-universal",
+    "category": "perifericos",
+    "name": "Control Remoto Universal Smart TV",
+    "specs": "Compatible con televisores Smart TV y tradicionales (LG, Samsung, Sony, Philips, TCL, etc.). Fácil programación y botones de acceso directo.",
+    "price": 7,
+    "stockStatus": "in_stock",
+    "badge": "Universal",
+    "icon": "fa-gamepad",
+    "image": "assets/images/productos/control-remoto-universal.png"
+  },
+  {
+    "id": "cable-usb-c-a-c",
+    "category": "cables",
+    "name": "Cable USB-C a USB-C de Carga Rápida y Datos",
+    "specs": "Cable con conectores Type-C en ambos extremos. Soporta protocolos Power Delivery (PD) de alta potencia y transferencia veloz de datos.",
+    "price": 6,
+    "stockStatus": "in_stock",
+    "badge": "Fast Charge",
+    "icon": "fa-bolt",
+    "image": "assets/images/productos/cable-usb-c-a-c.png"
+  },
+  {
+    "id": "adaptador-dp-hdmi",
+    "category": "cables",
+    "name": "Adaptador DisplayPort a HDMI",
+    "specs": "Conversor compacto macho DisplayPort a hembra HDMI. Permite conectar tarjetas de video modernas a pantallas, proyectores o TVs HDMI.",
+    "price": 6,
+    "stockStatus": "in_stock",
+    "badge": "Video HD",
+    "icon": "fa-plug",
+    "image": "assets/images/productos/adaptador-dp-hdmi.png"
+  },
+  {
+    "id": "cable-vga-argom",
+    "category": "cables",
+    "name": "Cable VGA ArgomTech con Filtros de Ferrita",
+    "specs": "Cable VGA macho a macho de 1.8 metros con conectores reforzados y núcleos de ferrita para eliminar interferencias de señal en monitores.",
+    "price": 6,
+    "stockStatus": "in_stock",
+    "badge": "ArgomTech",
+    "icon": "fa-tv",
+    "image": "assets/images/productos/cable-vga-argom.png"
+  },
+  {
+    "id": "adaptador-dahua-12v",
+    "category": "cables",
+    "name": "Adaptador de Corriente Dahua 12V",
+    "specs": "Fuente de poder original Dahua Technology. Diseñada para operar continuamente con cámaras de seguridad y dispositivos de red.",
+    "price": 6,
+    "stockStatus": "in_stock",
+    "badge": "Original",
+    "icon": "fa-plug",
+    "image": "assets/images/productos/adaptador-dahua-12v.png"
+  },
+  {
+    "id": "mouse-optico-negro",
+    "category": "perifericos",
+    "name": "Mouse Óptico para Computadora (Negro)",
+    "specs": "Mouse USB clásico alámbrico de gran durabilidad y comodidad para largas jornadas de trabajo o estudio. Sensor óptico confiable.",
+    "price": 5,
+    "stockStatus": "in_stock",
+    "badge": "Básico",
+    "icon": "fa-computer-mouse",
+    "image": "assets/images/productos/mouse-optico-negro.png"
+  },
+  {
+    "id": "hot-wheels-coleccion",
+    "category": "coleccion",
+    "name": "Autos de Colección Hot Wheels Originales",
+    "specs": "Vehículos die-cast a escala 1:64 en empaque original Mattel. Modelos surtidos coleccionables para fanáticos y entusiastas.",
+    "price": 5,
+    "stockStatus": "in_stock",
+    "badge": "Colección $5 c/u",
+    "icon": "fa-car",
+    "image": "assets/images/productos/hot-wheels-coleccion.png"
+  },
+  {
+    "id": "cable-usb-a-a-c",
+    "category": "cables",
+    "name": "Cable USB-A a USB Tipo C",
+    "specs": "Cable estándar para carga y sincronización de datos de teléfonos móviles, periféricos y accesorios con entrada USB-C.",
+    "price": 4,
+    "stockStatus": "in_stock",
+    "badge": "Universal",
+    "icon": "fa-mobile-screen",
+    "image": "assets/images/productos/cable-usb-a-a-c.png"
+  },
+  {
+    "id": "cable-de-poder-pc",
+    "category": "cables",
+    "name": "Cable de Poder AC para PC / Monitor",
+    "specs": "Cable de alimentación eléctrica tipo trébol / interlock para conectar computadoras de escritorio, monitores o impresoras a 110V/220V.",
+    "price": 4,
+    "stockStatus": "in_stock",
+    "badge": "Repuesto",
+    "icon": "fa-plug",
+    "image": "assets/images/productos/cable-de-poder-pc.png"
+  },
+  {
+    "id": "bateria-3v-cr2032",
+    "category": "componentes",
+    "name": "Batería 3V CR2032 de Litio para Tarjeta Madre",
+    "specs": "Pila de litio de alta duración para mantener la hora y configuración del BIOS / CMOS en laptops y PCs de escritorio.",
+    "price": 3,
+    "stockStatus": "in_stock",
+    "badge": "Esencial",
+    "icon": "fa-battery-half",
+    "image": "assets/images/productos/bateria-3v-cr2032.png"
+  },
+  {
+    "id": "cable-de-red-rj45",
+    "category": "cables",
+    "name": "Cable de Red Ethernet RJ45 Patch Cord",
+    "specs": "Cable de red categoría 5e/6 con conectores RJ45 ponchados de fábrica. Conexión a internet rápida, sin caídas ni pérdidas de paquetes.",
+    "price": 3,
+    "stockStatus": "in_stock",
+    "badge": "Internet",
+    "icon": "fa-network-wired",
+    "image": "assets/images/productos/cable-de-red-rj45.png"
+  },
+  {
+    "id": "cable-sata-datos",
+    "category": "cables",
+    "name": "Cable SATA de Datos para Discos y Tarjeta Madre",
+    "specs": "Cable SATA III de 6 Gbps con traba metálica de seguridad para conectar discos SSD o HDD mecánicos a la tarjeta madre.",
+    "price": 2,
+    "stockStatus": "in_stock",
+    "badge": "Conector",
+    "icon": "fa-hard-drive",
+    "image": "assets/images/productos/cable-sata-datos.png"
+  },
+  {
+    "id": "tarjeta-video-rtx-5060",
+    "category": "componentes",
+    "name": "Tarjeta de Video RTX Gaming (Agotada)",
+    "specs": "Unidad gráfica dedicada de alta gama para videojuegos AAA y renderizado. Temporalmente agotada. Consulta disponibilidad de próximos lotes.",
+    "price": 0,
+    "stockStatus": "out_of_stock",
+    "badge": "Agotada",
+    "icon": "fa-vr-cardboard",
+    "image": "assets/images/productos/tarjeta-video-rtx-5060.png"
+  },
+  {
+    "id": "ssd-nvme-1tb",
+    "category": "ssd",
+    "name": "SSD M.2 NVMe PCIe Gen3x4 1TB",
+    "specs": "Velocidad hasta 3500 MB/s lectura. Formato 2280 estándar para Laptops y PCs de alto rendimiento.",
+    "price": 65,
+    "stockStatus": "in_stock",
+    "badge": "Más Vendido",
+    "icon": "fa-hard-drive"
+  },
+  {
+    "id": "ssd-nvme-512gb",
+    "category": "ssd",
+    "name": "SSD M.2 NVMe PCIe 512GB",
+    "specs": "Ideal para revitalizar tu equipo con arranque ultrarrápido y carga instantánea de programas de diseño.",
+    "price": 42,
+    "stockStatus": "in_stock",
+    "badge": "Recomendado",
+    "icon": "fa-hard-drive"
+  },
+  {
+    "id": "ssd-2230-512gb",
+    "category": "ssd",
+    "name": "SSD M.2 2230 NVMe 512GB Compacto",
+    "specs": "Formato ultra corto (30mm) para consolas Steam Deck, ROG Ally y tablets Microsoft Surface.",
+    "price": 55,
+    "stockStatus": "in_stock",
+    "badge": "Especial",
+    "icon": "fa-microchip"
+  },
+  {
+    "id": "ram-ddr4-16gb",
+    "category": "ram",
+    "name": "Memoria RAM 16GB DDR4 3200MHz",
+    "specs": "Disponible para Laptop (SO-DIMM) y PC Escritorio (UDIMM). Disipador de calor incluido.",
+    "price": 42,
+    "stockStatus": "in_stock",
+    "badge": "Alta Demanda",
+    "icon": "fa-memory"
+  },
+  {
+    "id": "pasta-termica-premium",
+    "category": "componentes",
+    "name": "Pasta Térmica Alta Conductividad 4g",
+    "specs": "Compuesto térmico de alto rendimiento sin conductividad eléctrica. Baja temperaturas hasta 12°C.",
+    "price": 14,
+    "stockStatus": "in_stock",
+    "badge": "Mantenimiento",
+    "icon": "fa-temperature-arrow-down"
+  }
+];
 
   let productsData = [];
 
@@ -337,10 +606,13 @@
     // -----------------------------------------------------------------------
     // CARGA Y PERSISTENCIA DE DATOS
     // -----------------------------------------------------------------------
+    const CATALOG_VERSION_KEY = 'softproca-catalog-v2026-10-15';
+
     function loadCatalog() {
       try {
+        const storedVersion = safeStorageGet('softproca-catalog-version');
         const stored = safeStorageGet(STORAGE_KEY_CATALOG);
-        if (stored) {
+        if (stored && storedVersion === CATALOG_VERSION_KEY) {
           const parsed = JSON.parse(stored);
           if (Array.isArray(parsed) && parsed.length > 0) {
             productsData = parsed.map(p => ({
@@ -359,6 +631,7 @@
       }
       productsData = JSON.parse(JSON.stringify(DEFAULT_PRODUCTS));
       saveCatalog(false);
+      safeStorageSet('softproca-catalog-version', CATALOG_VERSION_KEY);
     }
 
     function saveCatalog(triggerRerender = true) {
@@ -450,8 +723,12 @@
 
       const categoryLabels = {
         'ssd': 'Discos SSD',
+        'componentes': 'Componentes & Hardware',
+        'cables': 'Cables & Adaptadores',
+        'perifericos': 'Periféricos',
+        'impresoras': 'Impresoras & Tóner',
         'ram': 'Memorias RAM',
-        'componentes': 'Componentes',
+        'coleccion': 'Colección',
         'software': 'Software'
       };
 
