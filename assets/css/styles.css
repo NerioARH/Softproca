@@ -160,6 +160,23 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* ==========================================================================
+   SELECCIÓN DE TEXTO PERSONALIZADA (NARANJA DE MARCA SOFTPROCA)
+   ========================================================================== */
+::selection,
+*::selection {
+  background-color: #FF5A00 !important;
+  color: #FFFFFF !important;
+  text-shadow: none !important;
+}
+
+::-moz-selection,
+*::-moz-selection {
+  background-color: #FF5A00 !important;
+  color: #FFFFFF !important;
+  text-shadow: none !important;
+}
+
 /* Scrollbar Personalizada */
 ::-webkit-scrollbar {
   width: 9px;
